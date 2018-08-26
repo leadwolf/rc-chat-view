@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import MessageList from './messages/MessageList';
 import UserInput from './UserInput';
 import Header from './Header';
-import '../styles/index.css';
+import '../styles/chatWindow.css';
 
 class ChatWindow extends Component {
     constructor(props) {
