@@ -1,0 +1,29 @@
+{
+  "name": "react-chat-view",
+  "version": "1.0.0",
+  "description": "simple chat component for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christopher-Caroni/react-chat-view.git"
+  },
+  "keywords": [
+    "react",
+    "chat",
+    "widget",
+    "message",
+    "messenger",
+    "conversation",
+    "ui",
+    "react-component"
+  ],
+  "author": "Christopher Caroni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Christopher-Caroni/react-chat-view/issues"
+  },
+  "homepage": "https://github.com/Christopher-Caroni/react-chat-view#readme"
+}
