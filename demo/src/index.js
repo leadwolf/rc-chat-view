@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Launcher } from '../../src';
-import messageHistory from './messageHistory';
+import messageHistory from '../data/messageHistory';
 import TestArea from './TestArea';
 import Header from './Header';
 import Footer from './Footer';
 import monsterImgUrl from './../assets/monster.png';
-import './../assets/styles';
+import './../assets/styles/base.css';
 
 class Demo extends Component {
     constructor() {

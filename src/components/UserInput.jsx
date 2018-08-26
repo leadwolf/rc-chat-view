@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SendIcon from './icons/SendIcon';
 import EmojiIcon from './icons/EmojiIcon';
 import EmojiPicker from './emoji-picker/EmojiPicker';
+import '../styles/userInput.css';
 
 class UserInput extends Component {
     constructor() {

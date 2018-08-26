@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import emojiData from './emojiData';
+import '../../styles/emojiPicker.css';
 
 class EmojiPicker extends Component {
     componentDidMount() {

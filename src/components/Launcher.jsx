@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ChatWindow from './ChatWindow';
 import launcherIcon from './../assets/logo-no-bg.svg';
 import launcherIconActive from './../assets/close-icon.png';
+import '../styles/launcher.css';
 
 class Launcher extends Component {
     constructor() {

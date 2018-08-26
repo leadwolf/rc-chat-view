@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../assets/styles/test-area.css';
 
 class TestArea extends Component {
     render() {

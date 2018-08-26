@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import closeIcon from './../assets/close-icon.png';
+import '../styles/header.css';
 
 class Header extends Component {
     render() {
