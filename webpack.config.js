@@ -22,6 +22,18 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            fallback: 'file-loader',
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [htmlWebpackPlugin],
