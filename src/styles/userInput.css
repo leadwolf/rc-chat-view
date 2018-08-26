@@ -8,6 +8,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    flex-direction: row;
 }
 
 .sc-user-input--text {
@@ -30,6 +31,8 @@
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    justify-content: flex-start;
+    align-self: flex-start;
 }
 
 .sc-user-input--text:empty:before {
@@ -46,18 +49,15 @@
 }
 
 .sc-user-input--buttons {
-    width: 100px;
-    position: absolute;
-    right: 30px;
-    height: 100%;
     display: flex;
-}
-
-.sc-user-input--button:first-of-type {
-    width: 40px;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
 }
 
 .sc-user-input--button {
+    padding-left: 5px;
+    padding-right: 5px;
     width: 30px;
     height: 55px;
     display: flex;

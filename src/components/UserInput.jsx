@@ -42,11 +42,7 @@ class UserInput extends Component {
 
     render() {
         return (
-            <form
-                className={`sc-user-input ${
-                    this.state.inputActive ? 'active' : ''
-                }`}
-            >
+            <form className={`sc-user-input ${this.state.inputActive ? 'active' : ''}`}>
                 <div
                     role="button"
                     tabIndex="0"
@@ -65,14 +61,9 @@ class UserInput extends Component {
                     className="sc-user-input--text"
                 />
                 <div className="sc-user-input--buttons">
-                    <div className="sc-user-input--button" />
                     <div className="sc-user-input--button">
                         {this.props.showEmoji && (
-                            <EmojiIcon
-                                onEmojiPicked={this._handleEmojiPicked.bind(
-                                    this
-                                )}
-                            />
+                            <EmojiIcon onEmojiPicked={this._handleEmojiPicked.bind(this)} />
                         )}
                     </div>
                     <div className="sc-user-input--button">
