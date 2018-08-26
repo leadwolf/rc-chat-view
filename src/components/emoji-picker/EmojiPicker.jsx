@@ -15,6 +15,8 @@ class EmojiPicker extends Component {
         this.domNode.focus();
     }
 
+    onSelect = () => {};
+
     render() {
         return (
             <div
@@ -25,9 +27,7 @@ class EmojiPicker extends Component {
                     this.domNode = e;
                 }}
             >
-                <div className="sc-emoji-picker--content">
-                    <Picker set="apple" />
-                </div>
+                <Picker onSelect={this.onSelect} set="apple" />
             </div>
         );
     }
