@@ -1,6 +1,6 @@
-import React from 'react';
-import './styles.css';
+import React, {Component} from 'react';
+import './styles';
+import Launcher from './components/Launcher';
 
-const MyComponent = () => <h1>Hello from My Component</h1>;
 
-export default MyComponent;
+export { Launcher };
