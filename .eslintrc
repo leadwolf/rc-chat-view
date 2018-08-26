@@ -1,0 +1,28 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb",
+        "plugin:prettier/recommended",
+        "prettier/react",
+        "plugin:react/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "plugins": ["prettier", "babel"],
+    "rules": {
+        "no-console": "off",
+        "comma-dangle": "off",
+        "react/jsx-filename-extension": "off",
+        "prettier/prettier": "error",
+        "react/prop-types": "warning",
+        "babel/semi": 1,
+        "func-names": 0,
+        "prefer-destructuring": 1,
+        "no-underscore-dangle": 0,
+        "import/prefer-default-export": 1,
+        "no-unused-vars": 1,
+        "react/destructuring-assignment" : 1
+    }
+}
