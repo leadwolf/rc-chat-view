@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import emojiData from './emojiData';
+import { Picker } from 'emoji-mart';
+import 'emoji-mart/css/emoji-mart.css';
+
 import '../../styles/emojiPicker.css';
 
 class EmojiPicker extends Component {
@@ -24,32 +26,7 @@ class EmojiPicker extends Component {
                 }}
             >
                 <div className="sc-emoji-picker--content">
-                    {emojiData.map(category => {
-                        return (
-                            <div
-                                className="sc-emoji-picker--category"
-                                key={category.name}
-                            >
-                                <div className="sc-emoji-picker--category-title">
-                                    {category.name}
-                                </div>
-                                {category.emojis.map(emoji => {
-                                    return (
-                                        <span
-                                            key={emoji}
-                                            className="sc-emoji-picker--emoji"
-                                            onClick={() => {
-                                                this.props.onEmojiPicked(emoji);
-                                                this.domNode.blur();
-                                            }}
-                                        >
-                                            {emoji}
-                                        </span>
-                                    );
-                                })}
-                            </div>
-                        );
-                    })}
+                    <Picker set="apple" />
                 </div>
             </div>
         );
