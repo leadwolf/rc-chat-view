@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
 import chatIconUrl from './../../assets/chat-icon.svg';
-import '../../styles/message.css';
+import '../../styles/messages/message.css';
 
 class Message extends Component {
     _renderMessageOfType(type) {
