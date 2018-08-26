@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --mode development",
+        "start": "webpack-dev-server --mode development --hot",
         "transpile": "babel src -d dist --copy-files",
         "prepublishOnly": "npm run transpile",
         "build": "webpack --mode production",
@@ -48,6 +48,7 @@
         "html-webpack-plugin": "^3.2.0",
         "react": "^16.4.2",
         "react-dom": "^16.4.2",
+        "react-hot-loader": "^4.3.5",
         "style-loader": "^0.22.1",
         "url-loader": "^1.1.1",
         "webpack": "^4.17.1",
