@@ -22,21 +22,6 @@
     bottom: 90px;
 }
 
-.sc-message-list {
-    height: 80%;
-    overflow-y: auto;
-    background-color: white;
-    background-size: 100%;
-    padding: 40px 0px;
-}
-
-.sc-message--me {
-    text-align: right;
-}
-.sc-message--them {
-    text-align: left;
-}
-
 @media (max-width: 450px) {
     .sc-chat-window {
         width: 100%;
