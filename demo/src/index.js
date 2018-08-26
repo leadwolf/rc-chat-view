@@ -57,7 +57,7 @@ class Demo extends Component {
                 <TestArea onMessage={this._sendMessage.bind(this)} />
                 <Launcher
                     agentProfile={{
-                        teamName: 'react-live-chat',
+                        teamName: 'react-chat-view',
                         imageUrl:
                             'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
                     }}
