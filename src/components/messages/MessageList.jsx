@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Message from './Messages';
+import Message from './Message';
+import '../../styles/messages/messageList.css';
 
 class MessageList extends Component {
     componentDidUpdate(prevProps, prevState) {

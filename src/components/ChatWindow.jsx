@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import MessageList from './MessageList';
+import MessageList from './messages/MessageList';
 import UserInput from './UserInput';
 import Header from './Header';
 import '../styles/index.css';
