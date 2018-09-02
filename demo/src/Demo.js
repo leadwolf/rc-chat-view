@@ -11,66 +11,64 @@ import monsterImgUrl from '../assets/monster.png';
 import '../assets/styles/base.css';
 
 class Demo extends Component {
-    constructor() {
-        super();
-        this.state = {
-            messageList: messageHistory,
-            newMessagesCount: 0,
-            isOpen: false,
-        };
-    }
+    state = {
+        messageList: messageHistory,
+        newMessagesCount: 0,
+        isOpen: false,
+    };
 
-    _onMessageWasSent(message) {
-        this.setState({
-            messageList: [...this.state.messageList, message],
-        });
-    }
-
-    _sendMessage(text) {
-        if (text.length > 0) {
-            const newMessagesCount = this.state.isOpen
-                ? this.state.newMessagesCount
-                : this.state.newMessagesCount + 1;
-            this.setState({
-                newMessagesCount,
+    appendMessage = message => {
+        if (message.text.length > 0) {
+            this.setState(({ isOpen, newMessagesCount, messageList }) => ({
+                newMessagesCount: isOpen ? newMessagesCount : newMessagesCount + 1,
                 messageList: [
-                    ...this.state.messageList,
+                    ...messageList,
                     {
-                        author: 'them',
+                        ...message,
+                        id: `message_${messageList.length}`,
                         type: 'text',
-                        data: { text },
                     },
                 ],
-            });
+            }));
         }
-    }
+    };
 
-    _handleClick() {
-        this.setState({
-            isOpen: !this.state.isOpen,
+    _sendMessage = message => {
+        this.appendMessage({ ...message, senderId: 'dummy_sender_1' });
+    };
+
+    fakeReceiveMessage = text => {
+        this.appendMessage({ text, senderId: 'dummy_sender_2' });
+    };
+
+    _handleClick = () => {
+        this.setState(({ isOpen }) => ({
+            isOpen: !isOpen,
             newMessagesCount: 0,
-        });
-    }
+        }));
+    };
 
     render() {
+        const { messageList, newMessagesCount, isOpen } = this.state;
+
         return (
             <div>
                 <Header />
-                <TestArea onMessage={this._sendMessage.bind(this)} />
+                <TestArea onMessage={this.fakeReceiveMessage} />
                 <Launcher
                     agentProfile={{
                         teamName: 'react-chat-view',
                         imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
                     }}
-                    onMessageWasSent={this._onMessageWasSent.bind(this)}
-                    messageList={this.state.messageList}
-                    newMessagesCount={this.state.newMessagesCount}
-                    handleClick={this._handleClick.bind(this)}
-                    isOpen={this.state.isOpen}
+                    onMessageWasSent={this._sendMessage}
+                    messageList={messageList}
+                    newMessagesCount={newMessagesCount}
+                    handleClick={this._handleClick}
+                    isOpen={isOpen}
                     showEmoji
                     userId="dummy_sender_1"
                 />
-                <img className="demo-monster-img" src={monsterImgUrl} />
+                <img className="demo-monster-img" src={monsterImgUrl} alt="monster" />
                 <Footer />
             </div>
         );
