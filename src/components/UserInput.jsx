@@ -16,13 +16,13 @@ class UserInput extends Component {
         }
     };
 
-    clearInput = () => (this.userInput.innerHTML = '');
+    clearInput = () => (this.userInput.value = '');
 
     _submitText = event => {
         event.preventDefault();
         const { onSubmit } = this.props;
 
-        const text = this.userInput.textContent;
+        const text = this.userInput.value;
 
         if (text && text.length > 0) {
             onSubmit({
