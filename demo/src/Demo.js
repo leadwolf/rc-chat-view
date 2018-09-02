@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { hot } from 'react-hot-loader';
+
 import { Launcher } from '../../src';
 import messageHistory from '../data/messageHistory';
 import TestArea from './TestArea';
 import Header from './Header';
 import Footer from './Footer';
+
 import monsterImgUrl from '../assets/monster.png';
 import '../assets/styles/base.css';
 
-export default class Demo extends Component {
+class Demo extends Component {
     constructor() {
         super();
         this.state = {
@@ -73,3 +76,5 @@ export default class Demo extends Component {
         );
     }
 }
+
+export default hot(module)(Demo);
