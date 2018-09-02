@@ -88,6 +88,10 @@
     margin: 0px;
 }
 
+.sc-user-input--send-icon-wrapper:focus {
+    outline: none;
+}
+
 .sc-user-input--emoji-icon-wrapper:focus {
     outline: none;
 }
