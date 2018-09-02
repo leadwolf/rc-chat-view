@@ -2,7 +2,7 @@
     "name": "react-chat-view",
     "version": "1.0.0",
     "description": "simple chat component for React",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack-dev-server --mode development --hot",
