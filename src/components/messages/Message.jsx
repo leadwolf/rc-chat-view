@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
-import chatIconUrl from './../../assets/chat-icon.svg';
+import chatIconUrl from '../../assets/chat-icon.svg';
 import '../../styles/messages/message.css';
 
 class Message extends Component {
-    _renderMessageOfType(type) {
+    _renderMessageOfType = (type, message) => {
         switch (type) {
+            default:
             case 'text':
-                return <TextMessage {...this.props.message} />;
+                return <TextMessage {...message} />;
             case 'emoji':
-                return <EmojiMessage {...this.props.message} />;
+                return <EmojiMessage {...message} />;
         }
-    }
+    };
 
     render() {
-        let contentClassList = [
-            'sc-message--content',
-            this.props.message.author === 'me' ? 'sent' : 'received',
-        ];
+        const {
+            message: { author, type },
+            message,
+        } = this.props;
+
         return (
             <div className="sc-message">
-                <div className={contentClassList.join(' ')}>
+                <div className={`sc-message--content ${author === 'me' ? 'sent' : 'received'}`}>
                     <div
                         className="sc-message--avatar"
                         style={{
                             backgroundImage: `url(${chatIconUrl})`,
                         }}
                     />
-                    {this._renderMessageOfType(this.props.message.type)}
+                    {this._renderMessageOfType(type, message)}
                 </div>
             </div>
         );
