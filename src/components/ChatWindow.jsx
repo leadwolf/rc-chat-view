@@ -1,51 +1,42 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import MessageList from './messages/MessageList';
 import UserInput from './UserInput';
 import Header from './Header';
 import '../styles/chatWindow.css';
+import { messageArrayType } from '../types';
 
-class ChatWindow extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    onUserInputSubmit(message) {
-        this.props.onUserInputSubmit(message);
-    }
-
-    onMessageReceived(message) {
-        this.setState({ messages: [...this.state.messages, message] });
-    }
-
-    render() {
-        const { userId } = this.props;
-
-        const messageList = this.props.messageList || [];
-        const classList = ['sc-chat-window', this.props.isOpen ? 'opened' : 'closed'];
-        return (
-            <div className={classList.join(' ')}>
-                <Header
-                    teamName={this.props.agentProfile.teamName}
-                    imageUrl={this.props.agentProfile.imageUrl}
-                    onClose={this.props.onClose}
-                />
-                <MessageList
-                    messages={messageList}
-                    imageUrl={this.props.agentProfile.imageUrl}
-                    userId={userId}
-                />
-                <UserInput
-                    showEmoji={this.props.showEmoji}
-                    onSubmit={this.onUserInputSubmit.bind(this)}
-                />
-            </div>
-        );
-    }
-}
+const ChatWindow = ({
+    userId,
+    messageList,
+    onUserInputSubmit,
+    isOpen,
+    agentProfile: { teamName, imageUrl },
+    onClose,
+    showEmoji,
+}) => (
+    <div className={`sc-chat-window ${isOpen ? 'opened' : 'closed'}`}>
+        <Header teamName={teamName} imageUrl={imageUrl} onClose={onClose} />
+        <MessageList messages={messageList} imageUrl={imageUrl} userId={userId} />
+        <UserInput showEmoji={showEmoji} onSubmit={onUserInputSubmit} />
+    </div>
+);
 
 ChatWindow.propTypes = {
-    showEmoji: PropTypes.bool,
+    userId: PropTypes.string.isRequired,
+    messageList: messageArrayType.isRequired,
+
+    onClose: PropTypes.func.isRequired,
+
+    onUserInputSubmit: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
+
+    agentProfile: PropTypes.shape({
+        teamName: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string.isRequired,
+    }).isRequired,
+
+    showEmoji: PropTypes.bool.isRequired,
 };
 
 export default ChatWindow;

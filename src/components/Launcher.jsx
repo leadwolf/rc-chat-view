@@ -41,6 +41,8 @@ class Launcher extends Component {
                 <div />
                 <div className={`sc-launcher ${isOpen ? 'opened' : ''}`} onClick={this.handleClick}>
                     <MessageCount count={newMessagesCount} isOpen={isOpen} />
+
+                    {/* css manages state via class */}
                     <img className="sc-open-icon" src={launcherIconActive} alt="open chat" />
                     <img className="sc-closed-icon" src={launcherIcon} alt="close chat" />
                 </div>
@@ -69,7 +71,7 @@ Launcher.propTypes = {
     newMessagesCount: PropTypes.number,
     isOpen: PropTypes.bool,
     handleClick: PropTypes.func,
-    messageList: PropTypes.arrayOf(PropTypes.object),
+    messageList: messageArrayType,
     showEmoji: PropTypes.bool,
 };
 
@@ -77,7 +79,7 @@ Launcher.defaultProps = {
     isOpen: null,
     handleClick: undefined,
 
-    messageList: messageArrayType.isRequired,
+    messageList: [],
 
     newMessagesCount: 0,
     showEmoji: true,
