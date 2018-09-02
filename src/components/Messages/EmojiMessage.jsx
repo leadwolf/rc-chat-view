@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-const EmojiMessage = props => {
-    return <div className="sc-message--emoji">{props.data.emoji}</div>;
-};
+const EmojiMessage = ({ emoji }) => <div className="sc-message--emoji">{emoji}</div>;
 
 export default EmojiMessage;

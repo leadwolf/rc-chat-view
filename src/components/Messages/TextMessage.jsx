@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import chatIconUrl from './../../assets/chat-icon.svg';
+import chatIconUrl from '../../assets/chat-icon.svg';
 
-const TextMessage = props => {
-    return <div className="sc-message--text">{props.data.text}</div>;
-};
+const TextMessage = ({ text }) => <div className="sc-message--text">{text}</div>;
 
 export default TextMessage;
