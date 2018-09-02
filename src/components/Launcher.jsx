@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ChatWindow from './ChatWindow';
-import launcherIcon from './../assets/logo-no-bg.svg';
-import launcherIconActive from './../assets/close-icon.png';
+import launcherIcon from "../assets/logo-no-bg.svg";
+import launcherIconActive from "../assets/close-icon.png";
 import '../styles/launcher.css';
 
 class Launcher extends Component {
@@ -25,23 +25,17 @@ class Launcher extends Component {
     }
 
     render() {
-        const isOpen = this.props.hasOwnProperty('isOpen')
-            ? this.props.isOpen
-            : this.state.isOpen;
+        const { userId } = this.props;
+
+        const isOpen = this.props.hasOwnProperty('isOpen') ? this.props.isOpen : this.state.isOpen;
         const classList = ['sc-launcher', isOpen ? 'opened' : ''];
         return (
             <div>
                 <div />
-                <div
-                    className={classList.join(' ')}
-                    onClick={this.handleClick.bind(this)}
-                >
-                    <MessageCount
-                        count={this.props.newMessagesCount}
-                        isOpen={isOpen}
-                    />
-                    <img className={'sc-open-icon'} src={launcherIconActive} />
-                    <img className={'sc-closed-icon'} src={launcherIcon} />
+                <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
+                    <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
+                    <img className="sc-open-icon" src={launcherIconActive} />
+                    <img className="sc-closed-icon" src={launcherIcon} />
                 </div>
                 <ChatWindow
                     messageList={this.props.messageList}
@@ -50,6 +44,7 @@ class Launcher extends Component {
                     isOpen={isOpen}
                     onClose={this.handleClick.bind(this)}
                     showEmoji={this.props.showEmoji}
+                    userId={userId}
                 />
             </div>
         );
@@ -60,7 +55,7 @@ const MessageCount = props => {
     if (props.count === 0 || props.isOpen === true) {
         return null;
     }
-    return <div className={'sc-new-messsages-count'}>{props.count}</div>;
+    return <div className="sc-new-messsages-count">{props.count}</div>;
 };
 
 Launcher.propTypes = {

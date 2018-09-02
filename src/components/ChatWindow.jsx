@@ -19,11 +19,10 @@ class ChatWindow extends Component {
     }
 
     render() {
-        let messageList = this.props.messageList || [];
-        let classList = [
-            'sc-chat-window',
-            this.props.isOpen ? 'opened' : 'closed',
-        ];
+        const { userId } = this.props;
+
+        const messageList = this.props.messageList || [];
+        const classList = ['sc-chat-window', this.props.isOpen ? 'opened' : 'closed'];
         return (
             <div className={classList.join(' ')}>
                 <Header
@@ -34,6 +33,7 @@ class ChatWindow extends Component {
                 <MessageList
                     messages={messageList}
                     imageUrl={this.props.agentProfile.imageUrl}
+                    userId={userId}
                 />
                 <UserInput
                     showEmoji={this.props.showEmoji}

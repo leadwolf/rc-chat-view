@@ -17,13 +17,14 @@ class Message extends Component {
 
     render() {
         const {
-            message: { author, type },
+            userId,
+            message: { senderId, type },
             message,
         } = this.props;
 
         return (
             <div className="sc-message">
-                <div className={`sc-message--content ${author === 'me' ? 'sent' : 'received'}`}>
+                <div className={`sc-message--content ${senderId === userId ? 'sent' : 'received'}`}>
                     <div
                         className="sc-message--avatar"
                         style={{

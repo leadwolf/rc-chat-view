@@ -8,11 +8,11 @@ class MessageList extends Component {
     }
 
     render() {
+        const { userId } = this.props;
+
         return (
             <div className="sc-message-list" ref={el => (this.scrollList = el)}>
-                {this.props.messages.map((message, i) => {
-                    return <Message message={message} key={i} />;
-                })}
+                {this.props.messages.map((message, i) => <Message message={message} key={i} userId={userId} />)}
             </div>
         );
     }

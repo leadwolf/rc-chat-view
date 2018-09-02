@@ -4,8 +4,8 @@ import messageHistory from '../data/messageHistory';
 import TestArea from './TestArea';
 import Header from './Header';
 import Footer from './Footer';
-import monsterImgUrl from './../assets/monster.png';
-import './../assets/styles/base.css';
+import monsterImgUrl from '../assets/monster.png';
+import '../assets/styles/base.css';
 
 export default class Demo extends Component {
     constructor() {
@@ -29,7 +29,7 @@ export default class Demo extends Component {
                 ? this.state.newMessagesCount
                 : this.state.newMessagesCount + 1;
             this.setState({
-                newMessagesCount: newMessagesCount,
+                newMessagesCount,
                 messageList: [
                     ...this.state.messageList,
                     {
@@ -57,8 +57,7 @@ export default class Demo extends Component {
                 <Launcher
                     agentProfile={{
                         teamName: 'react-chat-view',
-                        imageUrl:
-                            'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
+                        imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
                     }}
                     onMessageWasSent={this._onMessageWasSent.bind(this)}
                     messageList={this.state.messageList}
@@ -66,6 +65,7 @@ export default class Demo extends Component {
                     handleClick={this._handleClick.bind(this)}
                     isOpen={this.state.isOpen}
                     showEmoji
+                    userId="dummy_sender_1"
                 />
                 <img className="demo-monster-img" src={monsterImgUrl} />
                 <Footer />
