@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import chatIconUrl from '../../assets/chat-icon.svg';
+import React from 'react';
 
 const TextMessage = ({ text }) => <div className="sc-message--text">{text}</div>;
 
