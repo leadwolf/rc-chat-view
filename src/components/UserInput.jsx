@@ -48,9 +48,7 @@ class UserInput extends Component {
 
         return (
             <form className={`sc-user-input ${inputActive ? 'active' : ''}`}>
-                <div
-                    role="button"
-                    tabIndex="0"
+                <textarea
                     onFocus={() => {
                         this.setState({ inputActive: true });
                     }}
@@ -61,7 +59,6 @@ class UserInput extends Component {
                         this.userInput = e;
                     }}
                     onKeyDown={this.handleKey}
-                    contentEditable="true"
                     placeholder="Write a reply..."
                     className="sc-user-input--text"
                 />

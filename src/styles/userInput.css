@@ -32,7 +32,6 @@
     overflow-x: hidden;
     overflow-y: auto;
     justify-content: flex-start;
-    align-self: flex-start;
 }
 
 .sc-user-input--text:empty:before {
