@@ -36,11 +36,13 @@ class EmojiIcon extends Component {
                 {isActive && (
                     <EmojiPicker onEmojiPicked={onEmojiPicked} onBlur={this._handlePickerBlur} />
                 )}
-                <button onClick={this._openPicker} className="sc-user-input--emoji-icon-wrapper">
+                <button
+                    onClick={this._openPicker}
+                    className="sc-user-input--emoji-icon-wrapper"
+                    type="button"
+                >
                     <svg
-                        className={`sc-user-input--emoji-icon ${
-                            this.props.isActive ? 'active' : ''
-                        }`}
+                        className={`sc-user-input--emoji-icon ${isActive ? 'active' : ''}`}
                         version="1.1"
                         id="Layer_2"
                         xmlns="http://www.w3.org/2000/svg"
@@ -77,5 +79,9 @@ class EmojiIcon extends Component {
         );
     }
 }
+
+EmojiIcon.propTypes = {
+    onEmojiPicked: PropTypes.func.isRequired,
+};
 
 export default EmojiIcon;
