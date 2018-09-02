@@ -1,49 +1,56 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ChatWindow from './ChatWindow';
-import launcherIcon from "../assets/logo-no-bg.svg";
-import launcherIconActive from "../assets/close-icon.png";
+import launcherIcon from '../assets/logo-no-bg.svg';
+import launcherIconActive from '../assets/close-icon.png';
+import { messageArrayType } from '../types';
+
 import '../styles/launcher.css';
 
 class Launcher extends Component {
-    constructor() {
-        super();
-        this.state = {
-            launcherIcon,
-            isOpen: false,
-        };
-    }
+    state = {
+        isOpen: false,
+    };
 
-    handleClick() {
-        if (this.props.handleClick !== undefined) {
-            this.props.handleClick();
+    handleClick = () => {
+        const { handleClick: propHandleClick } = this.props;
+
+        if (propHandleClick) {
+            propHandleClick();
         } else {
-            this.setState({
-                isOpen: !this.state.isOpen,
-            });
+            this.setState(({ isOpen }) => ({ isOpen: !isOpen }));
         }
-    }
+    };
 
     render() {
-        const { userId } = this.props;
+        const { isOpen: stateIsOpen } = this.state;
+        const {
+            userId,
+            isOpen: propIsOpen,
+            newMessagesCount,
+            messageList,
+            onMessageWasSent,
+            agentProfile,
+            showEmoji,
+        } = this.props;
 
-        const isOpen = this.props.hasOwnProperty('isOpen') ? this.props.isOpen : this.state.isOpen;
-        const classList = ['sc-launcher', isOpen ? 'opened' : ''];
+        const isOpen = propIsOpen !== null ? propIsOpen : stateIsOpen;
+
         return (
             <div>
                 <div />
-                <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
-                    <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
-                    <img className="sc-open-icon" src={launcherIconActive} />
-                    <img className="sc-closed-icon" src={launcherIcon} />
+                <div className={`sc-launcher ${isOpen ? 'opened' : ''}`} onClick={this.handleClick}>
+                    <MessageCount count={newMessagesCount} isOpen={isOpen} />
+                    <img className="sc-open-icon" src={launcherIconActive} alt="open chat" />
+                    <img className="sc-closed-icon" src={launcherIcon} alt="close chat" />
                 </div>
                 <ChatWindow
-                    messageList={this.props.messageList}
-                    onUserInputSubmit={this.props.onMessageWasSent}
-                    agentProfile={this.props.agentProfile}
+                    messageList={messageList}
+                    onUserInputSubmit={onMessageWasSent}
+                    agentProfile={agentProfile}
                     isOpen={isOpen}
-                    onClose={this.handleClick.bind(this)}
-                    showEmoji={this.props.showEmoji}
+                    onClose={this.handleClick}
+                    showEmoji={showEmoji}
                     userId={userId}
                 />
             </div>
@@ -51,16 +58,14 @@ class Launcher extends Component {
     }
 }
 
-const MessageCount = props => {
-    if (props.count === 0 || props.isOpen === true) {
-        return null;
-    }
-    return <div className="sc-new-messsages-count">{props.count}</div>;
+const MessageCount = ({ count, isOpen }) => {
+    if (!count || isOpen) return null;
+
+    return <div className="sc-new-messsages-count">{count}</div>;
 };
 
 Launcher.propTypes = {
-    onMessageWasReceived: PropTypes.func,
-    onMessageWasSent: PropTypes.func,
+    onMessageWasSent: PropTypes.func.isRequired,
     newMessagesCount: PropTypes.number,
     isOpen: PropTypes.bool,
     handleClick: PropTypes.func,
@@ -69,6 +74,11 @@ Launcher.propTypes = {
 };
 
 Launcher.defaultProps = {
+    isOpen: null,
+    handleClick: undefined,
+
+    messageList: messageArrayType.isRequired,
+
     newMessagesCount: 0,
     showEmoji: true,
 };
