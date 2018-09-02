@@ -1,41 +1,42 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import EmojiPicker from './../emoji-picker/EmojiPicker';
+import EmojiPicker from '../emoji-picker/EmojiPicker';
 
 class EmojiIcon extends Component {
-    constructor() {
-        super();
-        this.state = {
-            isActive: false,
-        };
-    }
+    state = {
+        isActive: false,
+    };
 
-    _handlePickerBlur() {
+    _handlePickerBlur = () => {
+        this.ignoreClick = true;
         this.setState({
             isActive: false,
         });
-    }
+        setTimeout(() => {
+            this.ignoreClick = false;
+        }, 100);
+    };
 
-    _openPicker(e) {
+    _openPicker = e => {
         e.preventDefault();
-        this.setState({
-            isActive: !this.state.isActive,
-        });
-    }
+        if (this.ignoreClick) {
+            this.ignoreClick = false;
+            return;
+        }
+
+        this.setState(({ isActive }) => ({ isActive: !isActive }));
+    };
 
     render() {
+        const { isActive } = this.state;
+        const { onEmojiPicked } = this.props;
+
         return (
             <div className="sc-user-input--picker-wrapper">
-                {this.state.isActive && (
-                    <EmojiPicker
-                        onEmojiPicked={this.props.onEmojiPicked}
-                        onBlur={this._handlePickerBlur.bind(this)}
-                    />
+                {isActive && (
+                    <EmojiPicker onEmojiPicked={onEmojiPicked} onBlur={this._handlePickerBlur} />
                 )}
-                <button
-                    onClick={this._openPicker.bind(this)}
-                    className="sc-user-input--emoji-icon-wrapper"
-                >
+                <button onClick={this._openPicker} className="sc-user-input--emoji-icon-wrapper">
                     <svg
                         className={`sc-user-input--emoji-icon ${
                             this.props.isActive ? 'active' : ''
