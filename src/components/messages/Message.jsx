@@ -36,12 +36,7 @@ class Message extends Component {
             <div className="sc-message">
                 <div className={`sc-message--content ${messageIsMine ? 'sent' : 'received'}`}>
                     {!messageIsMine && (
-                        <div
-                            className={`sc-message--avatar ${showAvatar ? '' : 'hidden'}`}
-                            // style={{
-                            //     backgroundImage: `url(${chatIconUrl})`,
-                            // }}
-                        >
+                        <div className={`sc-message--avatar ${showAvatar ? '' : 'hidden'}`}>
                             <Avatar {...avatar} size="30px" round />
                         </div>
                     )}
