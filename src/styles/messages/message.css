@@ -103,6 +103,7 @@ p {
     color: #263238;
     background-color: #f4f7f9;
     margin-right: 40px;
+    align-self: flex-start;
 }
 
 @media (max-width: 450px) {
