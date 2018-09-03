@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 
@@ -15,22 +17,33 @@ class EmojiPicker extends Component {
         this.domNode.focus();
     }
 
-    onSelect = () => {};
+    onEmojiPicked = emoji => {
+        const { onEmojiPicked: propOnEmojiPicked, onBlur } = this.props;
+        propOnEmojiPicked(emoji);
+        onBlur();
+    };
 
     render() {
+        const { onBlur } = this.props;
+
         return (
             <div
                 tabIndex="0"
-                onBlur={this.props.onBlur}
+                onBlur={onBlur}
                 className="sc-emoji-picker"
                 ref={e => {
                     this.domNode = e;
                 }}
             >
-                <Picker onSelect={this.onSelect} set="apple" />
+                <Picker onSelect={this.onEmojiPicked} set="apple" />
             </div>
         );
     }
 }
+
+EmojiPicker.propTypes = {
+    onEmojiPicked: PropTypes.func.isRequired,
+    onBlur: PropTypes.func.isRequired,
+};
 
 export default EmojiPicker;
