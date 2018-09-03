@@ -1,6 +1,6 @@
 .sc-message {
-    width: 300px;
-    margin: 0px 15px;
+    width: 100%-15px;
+    padding: 0px 15px;
     padding-bottom: 10px;
     display: flex;
 }
