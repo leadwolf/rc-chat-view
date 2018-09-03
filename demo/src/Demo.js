@@ -9,6 +9,7 @@ import Footer from './Footer';
 
 import monsterImgUrl from '../assets/monster.png';
 import '../assets/styles/base.css';
+import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI } from '../../src/types';
 
 class Demo extends Component {
     state = {
@@ -18,7 +19,10 @@ class Demo extends Component {
     };
 
     appendMessage = message => {
-        if (message.text.length > 0) {
+        if (
+            (message.type === MESSAGE_CONTENT_TYPE_TEXT && message.text.length > 0) ||
+            (message.type === MESSAGE_CONTENT_TYPE_EMOJI && message.emoji)
+        ) {
             this.setState(({ isOpen, newMessagesCount, messageList }) => ({
                 newMessagesCount: isOpen ? newMessagesCount : newMessagesCount + 1,
                 messageList: [
