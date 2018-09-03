@@ -49,6 +49,29 @@ p {
     font-size: 14px;
 }
 
+.sc-message--text a {
+    /* color: white; */
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.sc-message--text a:link {
+    color: white;
+}
+
+.sc-message--text a:visited {
+    color: #fff04e;
+}
+
+.sc-message--text a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.sc-message--text a:active {
+    color: white;
+}
+
 .sc-message--content.sent .sc-message--text {
     color: white;
     background-color: #4e8cff;
