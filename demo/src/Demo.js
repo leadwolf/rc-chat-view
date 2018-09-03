@@ -26,7 +26,6 @@ class Demo extends Component {
                     {
                         ...message,
                         id: `message_${messageList.length}`,
-                        type: 'text',
                     },
                 ],
             }));
@@ -38,7 +37,11 @@ class Demo extends Component {
     };
 
     fakeReceiveMessage = text => {
-        this.appendMessage({ text, senderId: 'dummy_sender_2' });
+        this.appendMessage({
+            type: 'text',
+            text,
+            senderId: 'dummy_sender_2',
+        });
     };
 
     _handleClick = () => {
