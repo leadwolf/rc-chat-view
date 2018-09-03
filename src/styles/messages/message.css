@@ -31,13 +31,22 @@
 }
 
 .sc-message--text {
-    padding: 17px 20px;
+    padding: 8px 12px;
     border-radius: 6px;
+}
+
+.sc-message--text h1,
+h2,
+h3,
+h3,
+p {
+    margin: 2px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.sc-message--text p {
     font-weight: 300;
     font-size: 14px;
-    line-height: 1.4;
-    white-space: pre-wrap;
-    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .sc-message--content.sent .sc-message--text {
