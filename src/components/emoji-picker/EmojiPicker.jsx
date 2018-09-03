@@ -8,6 +8,8 @@ import '../../styles/emojiPicker.css';
 
 class EmojiPicker extends Component {
     componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+
         const elem = this.domNode;
         elem.style.opacity = 0;
         window.requestAnimationFrame(() => {
@@ -17,6 +19,16 @@ class EmojiPicker extends Component {
         this.domNode.focus();
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    handleClickOutside = event => {
+        const { onBlur } = this.props;
+
+        if (this.domNode && !this.domNode.contains(event.target)) onBlur();
+    };
+
     onEmojiPicked = emoji => {
         const { onEmojiPicked: propOnEmojiPicked, onBlur } = this.props;
         propOnEmojiPicked(emoji);
@@ -24,18 +36,9 @@ class EmojiPicker extends Component {
     };
 
     render() {
-        const { onBlur } = this.props;
-
         return (
-            <div
-                tabIndex="0"
-                // onBlur={onBlur}
-                className="sc-emoji-picker"
-                ref={e => {
-                    this.domNode = e;
-                }}
-            >
-                <Picker onSelect={this.onEmojiPicked} set="apple" />
+            <div tabIndex="0" className="sc-emoji-picker" ref={e => (this.domNode = e)}>
+                <Picker autoFocus onSelect={this.onEmojiPicked} set="apple" />
             </div>
         );
     }
