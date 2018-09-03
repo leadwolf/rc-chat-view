@@ -27,6 +27,7 @@ class Message extends Component {
             message: { senderId, type, username, avatar },
             message,
             showAvatar,
+            canShowAvatar,
             showUsername,
         } = this.props;
 
@@ -35,11 +36,12 @@ class Message extends Component {
         return (
             <div className="sc-message">
                 <div className={`sc-message--content ${messageIsMine ? 'sent' : 'received'}`}>
-                    {!messageIsMine && (
-                        <div className={`sc-message--avatar ${showAvatar ? '' : 'hidden'}`}>
-                            <Avatar {...avatar} size="30px" round />
-                        </div>
-                    )}
+                    {!messageIsMine &&
+                        showAvatar && (
+                            <div className={`sc-message--avatar ${canShowAvatar ? '' : 'hidden'}`}>
+                                <Avatar {...avatar} size="30px" round />
+                            </div>
+                        )}
                     <div className="sc-message--content---body">
                         {!messageIsMine &&
                             showUsername && (
@@ -57,7 +59,8 @@ Message.propTypes = {
     userId: PropTypes.string.isRequired,
     message: messageType.isRequired,
 
-    showAvatar: PropTypes.bool.isRequired, // if the avater should be displayed or whitespace
+    showAvatar: PropTypes.bool.isRequired, // if avatar should be displayed
+    canShowAvatar: PropTypes.bool.isRequired, // if the avater should be displayed or whitespace
     showUsername: PropTypes.bool.isRequired,
 };
 
