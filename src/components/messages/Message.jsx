@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
 
 import chatIconUrl from '../../assets/chat-icon.svg';
 import '../../styles/messages/message.css';
 
-import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI } from '../../types';
+import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI, messageType } from '../../types';
 
 class Message extends Component {
     _renderMessageOfType = (type, message) => {
@@ -23,6 +25,7 @@ class Message extends Component {
             userId,
             message: { senderId, type },
             message,
+            showUsername,
         } = this.props;
 
         return (
@@ -40,5 +43,12 @@ class Message extends Component {
         );
     }
 }
+
+Message.propTypes = {
+    userId: PropTypes.string.isRequired,
+    message: messageType.isRequired,
+
+    showUsername: PropTypes.bool.isRequired,
+};
 
 export default Message;

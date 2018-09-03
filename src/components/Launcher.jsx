@@ -32,6 +32,7 @@ class Launcher extends Component {
             onMessageWasSent,
             agentProfile,
             showEmoji,
+            showUsername,
         } = this.props;
 
         const isOpen = propIsOpen !== null ? propIsOpen : stateIsOpen;
@@ -47,13 +48,14 @@ class Launcher extends Component {
                     <img className="sc-closed-icon" src={launcherIcon} alt="close chat" />
                 </div>
                 <ChatWindow
+                    userId={userId}
+                    isOpen={isOpen}
+                    onClose={this.handleClick}
                     messageList={messageList}
                     onUserInputSubmit={onMessageWasSent}
                     agentProfile={agentProfile}
-                    isOpen={isOpen}
-                    onClose={this.handleClick}
                     showEmoji={showEmoji}
-                    userId={userId}
+                    showUsername={showUsername}
                 />
             </div>
         );
@@ -67,12 +69,17 @@ const MessageCount = ({ count, isOpen }) => {
 };
 
 Launcher.propTypes = {
+    userId: PropTypes.string.isRequired,
+
+    isOpen: PropTypes.bool, // leave null to handle state internally
+    handleClick: PropTypes.func, // fired on button click and header close
+
+    messageList: messageArrayType,
     onMessageWasSent: PropTypes.func.isRequired,
     newMessagesCount: PropTypes.number,
-    isOpen: PropTypes.bool,
-    handleClick: PropTypes.func,
-    messageList: messageArrayType,
+
     showEmoji: PropTypes.bool,
+    showUsername: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
@@ -80,9 +87,10 @@ Launcher.defaultProps = {
     handleClick: undefined,
 
     messageList: [],
-
     newMessagesCount: 0,
+
     showEmoji: true,
+    showUsername: true,
 };
 
 export default Launcher;

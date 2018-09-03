@@ -14,10 +14,16 @@ const ChatWindow = ({
     agentProfile: { teamName, imageUrl },
     onClose,
     showEmoji,
+    showUsername,
 }) => (
     <div className={`sc-chat-window ${isOpen ? 'opened' : 'closed'}`}>
         <Header teamName={teamName} imageUrl={imageUrl} onClose={onClose} />
-        <MessageList messages={messageList} imageUrl={imageUrl} userId={userId} />
+        <MessageList
+            messages={messageList}
+            imageUrl={imageUrl}
+            userId={userId}
+            showUsername={showUsername}
+        />
         <UserInput showEmoji={showEmoji} onSubmit={onUserInputSubmit} />
     </div>
 );
@@ -37,6 +43,7 @@ ChatWindow.propTypes = {
     }).isRequired,
 
     showEmoji: PropTypes.bool.isRequired,
+    showUsername: PropTypes.bool.isRequired,
 };
 
 export default ChatWindow;
