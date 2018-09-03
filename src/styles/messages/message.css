@@ -62,10 +62,6 @@ p {
     margin-right: 40px;
 }
 
-.sc-message--emoji {
-    font-size: 40px;
-}
-
 @media (max-width: 450px) {
     .sc-message {
         width: 80%;
