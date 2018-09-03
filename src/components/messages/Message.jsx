@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Avatar from 'react-avatar';
 
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
@@ -23,7 +24,7 @@ class Message extends Component {
     render() {
         const {
             userId,
-            message: { senderId, type, username },
+            message: { senderId, type, username, avatar },
             message,
             showAvatar,
             showUsername,
@@ -37,10 +38,12 @@ class Message extends Component {
                     {!messageIsMine && (
                         <div
                             className={`sc-message--avatar ${showAvatar ? '' : 'hidden'}`}
-                            style={{
-                                backgroundImage: `url(${chatIconUrl})`,
-                            }}
-                        />
+                            // style={{
+                            //     backgroundImage: `url(${chatIconUrl})`,
+                            // }}
+                        >
+                            <Avatar {...avatar} size="30px" round />
+                        </div>
                     )}
                     <div className="sc-message--content---body">
                         {!messageIsMine &&
