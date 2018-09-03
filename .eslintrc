@@ -23,6 +23,7 @@
         "no-underscore-dangle": 0,
         "import/prefer-default-export": 1,
         "no-unused-vars": 1,
-        "react/destructuring-assignment" : 1
+        "react/destructuring-assignment": 1,
+        "no-return-assign": ["warn", "except-parens"]
     }
 }
