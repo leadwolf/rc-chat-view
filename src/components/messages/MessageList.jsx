@@ -11,19 +11,33 @@ class MessageList extends Component {
         this.scrollList.scrollTop = this.scrollList.scrollHeight;
     }
 
-    render() {
+    messageList = () => {
         const { userId, messages, showUsername } = this.props;
+        let lastSenderId = '';
 
+        return messages.map(message => {
+            const showAvatar = lastSenderId !== message.senderId;
+
+            const messageComp = (
+                <Message
+                    key={message.id}
+                    message={message}
+                    userId={userId}
+                    showUsername={showUsername}
+                    showAvatar={showAvatar}
+                />
+            );
+
+            lastSenderId = message.senderId;
+
+            return messageComp;
+        });
+    };
+
+    render() {
         return (
             <div className="sc-message-list" ref={el => (this.scrollList = el)}>
-                {messages.map(message => (
-                    <Message
-                        key={message.id}
-                        message={message}
-                        userId={userId}
-                        showUsername={showUsername}
-                    />
-                ))}
+                {this.messageList()}
             </div>
         );
     }

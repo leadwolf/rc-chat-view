@@ -30,6 +30,10 @@
     margin-right: 15px;
 }
 
+.sc-message--avatar.hidden {
+    visibility: hidden;
+}
+
 .sc-message--text {
     padding: 8px 12px;
     border-radius: 6px;
