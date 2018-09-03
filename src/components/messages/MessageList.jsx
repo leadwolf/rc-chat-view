@@ -12,19 +12,19 @@ class MessageList extends Component {
     }
 
     messageList = () => {
-        const { userId, messages, showUsername } = this.props;
+        const { userId, messages, showUsername: propShowUsername } = this.props;
         let lastSenderId = '';
 
         return messages.map(message => {
-            const showAvatar = lastSenderId !== message.senderId;
+            const lastSenderIsDiff = lastSenderId !== message.senderId;
 
             const messageComp = (
                 <Message
                     key={message.id}
                     message={message}
                     userId={userId}
-                    showUsername={showUsername}
-                    showAvatar={showAvatar}
+                    showUsername={lastSenderIsDiff && propShowUsername}
+                    showAvatar={lastSenderIsDiff}
                 />
             );
 
