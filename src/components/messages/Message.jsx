@@ -28,15 +28,19 @@ class Message extends Component {
             showUsername,
         } = this.props;
 
+        const messageIsMine = senderId === userId;
+
         return (
             <div className="sc-message">
-                <div className={`sc-message--content ${senderId === userId ? 'sent' : 'received'}`}>
-                    <div
-                        className="sc-message--avatar"
-                        style={{
-                            backgroundImage: `url(${chatIconUrl})`,
-                        }}
-                    />
+                <div className={`sc-message--content ${messageIsMine ? 'sent' : 'received'}`}>
+                    {!messageIsMine && (
+                        <div
+                            className="sc-message--avatar"
+                            style={{
+                                backgroundImage: `url(${chatIconUrl})`,
+                            }}
+                        />
+                    )}
                     {this._renderMessageOfType(type, message)}
                 </div>
             </div>
