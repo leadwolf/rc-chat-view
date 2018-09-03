@@ -37,7 +37,7 @@ class Demo extends Component {
     };
 
     _sendMessage = message => {
-        this.appendMessage({ ...message, senderId: 'dummy_sender_1' });
+        this.appendMessage({ ...message, senderId: 'dummy_sender_1', username: 'chris' });
     };
 
     fakeReceiveMessage = text => {
@@ -45,6 +45,7 @@ class Demo extends Component {
             type: 'text',
             text,
             senderId: 'dummy_sender_2',
+            username: 'sam',
         });
     };
 
