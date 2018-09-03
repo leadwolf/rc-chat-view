@@ -107,6 +107,6 @@ export default [
         id: 'dummy_message_17',
         type: MESSAGE_CONTENT_TYPE_EMOJI,
         senderId: 'dummy_sender_1',
-        emoji: '😋',
+        emoji: ':yum:',
     },
 ];
