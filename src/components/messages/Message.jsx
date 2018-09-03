@@ -23,7 +23,7 @@ class Message extends Component {
     render() {
         const {
             userId,
-            message: { senderId, type },
+            message: { senderId, type, username },
             message,
             showAvatar,
             showUsername,
@@ -42,7 +42,13 @@ class Message extends Component {
                             }}
                         />
                     )}
-                    {this._renderMessageOfType(type, message)}
+                    <div className="sc-message--content---body">
+                        {!messageIsMine &&
+                            showUsername && (
+                                <span className="sc-message--username">{username}</span>
+                            )}
+                        {this._renderMessageOfType(type, message)}
+                    </div>
                 </div>
             </div>
         );

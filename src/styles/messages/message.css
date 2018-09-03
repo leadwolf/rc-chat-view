@@ -8,6 +8,7 @@
 .sc-message--content {
     width: 100%;
     display: flex;
+    flex-direction: row;
 }
 
 .sc-message--content.sent {
@@ -32,6 +33,16 @@
 
 .sc-message--avatar.hidden {
     visibility: hidden;
+}
+
+.sc-message--content---body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sc-message--username {
+    font-size: 80%;
 }
 
 .sc-message--text {
@@ -81,6 +92,11 @@ p {
     background-color: #4e8cff;
     max-width: calc(100% - 120px);
     word-wrap: break-word;
+    align-self: flex-end;
+}
+
+.sc-message--content.sent .sc-message--emoji {
+    align-self: flex-end;
 }
 
 .sc-message--content.received .sc-message--text {
