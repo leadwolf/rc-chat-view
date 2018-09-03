@@ -15,6 +15,7 @@ const ChatWindow = ({
     onClose,
     showEmoji,
     showUsername,
+    avatarTopPosition,
 }) => (
     <div className={`sc-chat-window ${isOpen ? 'opened' : 'closed'}`}>
         <Header teamName={teamName} imageUrl={imageUrl} onClose={onClose} />
@@ -23,6 +24,7 @@ const ChatWindow = ({
             imageUrl={imageUrl}
             userId={userId}
             showUsername={showUsername}
+            avatarTopPosition={avatarTopPosition}
         />
         <UserInput showEmoji={showEmoji} onSubmit={onUserInputSubmit} />
     </div>
@@ -44,6 +46,7 @@ ChatWindow.propTypes = {
 
     showEmoji: PropTypes.bool.isRequired,
     showUsername: PropTypes.bool.isRequired,
+    avatarTopPosition: PropTypes.bool.isRequired,
 };
 
 export default ChatWindow;

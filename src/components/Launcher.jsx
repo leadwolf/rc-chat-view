@@ -33,6 +33,7 @@ class Launcher extends Component {
             agentProfile,
             showEmoji,
             showUsername,
+            avatarTopPosition,
         } = this.props;
 
         const isOpen = propIsOpen !== null ? propIsOpen : stateIsOpen;
@@ -56,6 +57,7 @@ class Launcher extends Component {
                     agentProfile={agentProfile}
                     showEmoji={showEmoji}
                     showUsername={showUsername}
+                    avatarTopPosition={avatarTopPosition}
                 />
             </div>
         );
@@ -80,6 +82,7 @@ Launcher.propTypes = {
 
     showEmoji: PropTypes.bool,
     showUsername: PropTypes.bool,
+    avatarTopPosition: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
@@ -91,6 +94,7 @@ Launcher.defaultProps = {
 
     showEmoji: true,
     showUsername: true,
+    avatarTopPosition: false,
 };
 
 export default Launcher;

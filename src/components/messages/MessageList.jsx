@@ -12,11 +12,14 @@ class MessageList extends Component {
     }
 
     messageList = () => {
-        const { userId, messages, showUsername: propShowUsername } = this.props;
+        const { userId, messages, showUsername: propShowUsername, avatarTopPosition } = this.props;
         let lastSenderId = '';
 
-        return messages.map(message => {
+        return messages.map((message, index) => {
             const lastSenderIsDiff = lastSenderId !== message.senderId;
+            const nextSenderIsSame =
+                index < messages.length - 1 && messages[index + 1].senderId === message.senderId;
+            const showAvatar = avatarTopPosition ? lastSenderIsDiff : !nextSenderIsSame;
 
             const messageComp = (
                 <Message
@@ -24,7 +27,7 @@ class MessageList extends Component {
                     message={message}
                     userId={userId}
                     showUsername={lastSenderIsDiff && propShowUsername}
-                    showAvatar={lastSenderIsDiff}
+                    showAvatar={showAvatar}
                 />
             );
 
@@ -48,6 +51,7 @@ MessageList.propTypes = {
     messages: messageArrayType.isRequired,
 
     showUsername: PropTypes.bool.isRequired,
+    avatarTopPosition: PropTypes.bool.isRequired,
 };
 
 export default MessageList;
