@@ -60,10 +60,11 @@ class Message extends Component {
                                 <span className="sc-message--username">{username}</span>
                             )}
                         {this._renderMessageOfType(type, message)}
-                        {showDate &&
-                            canShowDate && (
-                                <div className="sc-message--date">{moment(date).format('LTS')}</div>
-                            )}
+                        {showDate && (
+                            <div className={`sc-message--date ${canShowDate ? '' : 'hidden'}`}>
+                                {moment(date).format('LTS')}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
