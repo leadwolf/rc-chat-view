@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Avatar from 'react-avatar';
+import moment from 'moment';
 
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
@@ -24,7 +25,7 @@ class Message extends Component {
     render() {
         const {
             userId,
-            message: { senderId, type, username, avatar },
+            message: { senderId, type, username, avatar, date },
             message,
             showAvatar,
             canShowAvatar,
@@ -48,6 +49,7 @@ class Message extends Component {
                                 <span className="sc-message--username">{username}</span>
                             )}
                         {this._renderMessageOfType(type, message)}
+                        <div className="sc-message--date">{moment(date).format('LT')}</div>
                     </div>
                 </div>
             </div>

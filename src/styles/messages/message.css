@@ -84,9 +84,18 @@ p {
     word-wrap: break-word;
 }
 
+.sc-message--date {
+    padding-top: 5px;
+    font-size: 70%;
+}
+
 .sc-message--content.sent .sc-message--text {
     color: white;
     background-color: #4e8cff;
+    align-self: flex-end;
+}
+
+.sc-message--content.sent .sc-message--date {
     align-self: flex-end;
 }
 
@@ -98,6 +107,10 @@ p {
     color: #263238;
     background-color: #f4f7f9;
     margin-right: 40px;
+    align-self: flex-start;
+}
+
+.sc-message--content.received .sc-message--date {
     align-self: flex-start;
 }
 
