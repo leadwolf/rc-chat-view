@@ -59,8 +59,8 @@ Message.propTypes = {
     userId: PropTypes.string.isRequired,
     message: messageType.isRequired,
 
-    showAvatar: PropTypes.bool.isRequired, // if avatar should be displayed
-    canShowAvatar: PropTypes.bool.isRequired, // if the avater should be displayed or whitespace
+    showAvatar: PropTypes.bool.isRequired, // if avatar should be displayed or collapsed
+    canShowAvatar: PropTypes.bool.isRequired, // if the avatar should be displayed or whitespace
     showUsername: PropTypes.bool.isRequired,
 };
 

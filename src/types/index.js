@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+const momentPropTypes = require('react-moment-proptypes');
+
 export const MESSAGE_CONTENT_TYPE_TEXT = 'text';
 export const MESSAGE_CONTENT_TYPE_EMOJI = 'emoji';
 
@@ -54,6 +56,7 @@ export const messageType = PropTypes.shape({
     type: PropTypes.oneOf([MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI]).isRequired,
     text: messageContentTypeValidator,
     emoji: messageContentEmojiValidator,
+    date: PropTypes.oneOfType([momentPropTypes.momentString, momentPropTypes.momentObj]),
 });
 
 export const messageArrayType = PropTypes.arrayOf(messageType);
