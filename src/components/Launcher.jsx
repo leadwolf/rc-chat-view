@@ -35,6 +35,7 @@ class Launcher extends Component {
             showUsername,
             showAvatar,
             avatarTopPosition,
+            showDate,
         } = this.props;
 
         const isOpen = propIsOpen !== null ? propIsOpen : stateIsOpen;
@@ -60,6 +61,7 @@ class Launcher extends Component {
                     showUsername={showUsername}
                     showAvatar={showAvatar}
                     avatarTopPosition={avatarTopPosition}
+                    showDate={showDate}
                 />
             </div>
         );
@@ -86,6 +88,7 @@ Launcher.propTypes = {
     showUsername: PropTypes.bool,
     showAvatar: PropTypes.bool,
     avatarTopPosition: PropTypes.bool,
+    showDate: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
@@ -99,6 +102,7 @@ Launcher.defaultProps = {
     showUsername: true,
     showAvatar: true,
     avatarTopPosition: false,
+    showDate: true,
 };
 
 export default Launcher;

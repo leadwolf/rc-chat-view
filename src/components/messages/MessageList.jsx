@@ -21,6 +21,7 @@ class MessageList extends Component {
             showUsername: propShowUsername,
             showAvatar: propShowAvatar,
             avatarTopPosition,
+            showDate: propShowDate,
         } = this.props;
         let lastSenderId = '';
 
@@ -43,10 +44,10 @@ class MessageList extends Component {
                     key={message.id}
                     message={message}
                     userId={userId}
-                    showUsername={lastSenderIsDiff && propShowUsername}
+                    showUsername={propShowUsername && lastSenderIsDiff}
                     showAvatar={propShowAvatar}
                     canShowAvatar={canShowAvatar}
-                    showDate={showDate}
+                    showDate={propShowDate && showDate}
                 />
             );
 
@@ -72,6 +73,7 @@ MessageList.propTypes = {
     showUsername: PropTypes.bool.isRequired,
     showAvatar: PropTypes.bool.isRequired,
     avatarTopPosition: PropTypes.bool.isRequired,
+    showDate: PropTypes.bool.isRequired,
 };
 
 export default MessageList;
