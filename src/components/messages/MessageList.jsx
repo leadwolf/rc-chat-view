@@ -21,7 +21,7 @@ class MessageList extends Component {
             showUsername: propShowUsername,
             showAvatar: propShowAvatar,
             avatarTopPosition,
-            showDate: propShowDate,
+            showDate,
         } = this.props;
         let lastSenderId = '';
 
@@ -36,7 +36,7 @@ class MessageList extends Component {
                     ? moment(message.date).diff(moment(messages[index - 1].date), 'seconds')
                     : 0;
 
-            const showDate =
+            const canShowDate =
                 index === 0 || index === messages.length - 1 || dateDiff >= DATE_MIN_DIFF_SEC;
 
             const messageComp = (
@@ -47,7 +47,8 @@ class MessageList extends Component {
                     showUsername={propShowUsername && lastSenderIsDiff}
                     showAvatar={propShowAvatar}
                     canShowAvatar={canShowAvatar}
-                    showDate={propShowDate && showDate}
+                    showDate={showDate}
+                    canShowDate={canShowDate}
                 />
             );
 

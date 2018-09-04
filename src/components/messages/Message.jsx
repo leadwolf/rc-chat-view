@@ -12,14 +12,20 @@ import '../../styles/messages/message.css';
 import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI, messageType } from '../../types';
 
 class Message extends Component {
+    state = {};
+
     _renderMessageOfType = (type, message) => {
         switch (type) {
             default:
             case MESSAGE_CONTENT_TYPE_TEXT:
-                return <TextMessage {...message} />;
+                return <TextMessage {...message} onClick={this.handleMessageClick} />;
             case MESSAGE_CONTENT_TYPE_EMOJI:
-                return <EmojiMessage {...message} />;
+                return <EmojiMessage {...message} onClick={this.handleMessageClick} />;
         }
+    };
+
+    handleMessageClick = e => {
+        e.preventDefault();
     };
 
     render() {
@@ -31,6 +37,7 @@ class Message extends Component {
             canShowAvatar,
             showUsername,
             showDate,
+            canShowDate,
         } = this.props;
 
         const messageIsMine = senderId === userId;
@@ -50,9 +57,10 @@ class Message extends Component {
                                 <span className="sc-message--username">{username}</span>
                             )}
                         {this._renderMessageOfType(type, message)}
-                        {showDate && (
-                            <div className="sc-message--date">{moment(date).format('LTS')}</div>
-                        )}
+                        {showDate &&
+                            canShowDate && (
+                                <div className="sc-message--date">{moment(date).format('LTS')}</div>
+                            )}
                     </div>
                 </div>
             </div>
@@ -67,6 +75,8 @@ Message.propTypes = {
     showAvatar: PropTypes.bool.isRequired, // if avatar should be displayed or collapsed
     canShowAvatar: PropTypes.bool.isRequired, // if the avatar should be displayed or whitespace
     showUsername: PropTypes.bool.isRequired,
+    showDate: PropTypes.bool.isRequired,
+    canShowDate: PropTypes.bool.isRequired,
 };
 
 export default Message;
