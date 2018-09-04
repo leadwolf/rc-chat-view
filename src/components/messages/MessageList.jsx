@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import Message from './Message';
 import { messageArrayType } from '../../types';
 
 import '../../styles/messages/messageList.css';
+
+const DATE_MIN_DIFF_SEC = 10;
 
 class MessageList extends Component {
     componentDidUpdate(prevProps, prevState) {
@@ -27,6 +30,14 @@ class MessageList extends Component {
                 index < messages.length - 1 && messages[index + 1].senderId === message.senderId;
             const canShowAvatar = avatarTopPosition ? lastSenderIsDiff : !nextSenderIsSame;
 
+            const dateDiff =
+                index > 0
+                    ? moment(message.date).diff(moment(messages[index - 1].date), 'seconds')
+                    : 0;
+
+            const showDate =
+                index === 0 || index === messages.length - 1 || dateDiff >= DATE_MIN_DIFF_SEC;
+
             const messageComp = (
                 <Message
                     key={message.id}
@@ -35,6 +46,7 @@ class MessageList extends Component {
                     showUsername={lastSenderIsDiff && propShowUsername}
                     showAvatar={propShowAvatar}
                     canShowAvatar={canShowAvatar}
+                    showDate={showDate}
                 />
             );
 

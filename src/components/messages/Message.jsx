@@ -30,6 +30,7 @@ class Message extends Component {
             showAvatar,
             canShowAvatar,
             showUsername,
+            showDate,
         } = this.props;
 
         const messageIsMine = senderId === userId;
@@ -49,7 +50,9 @@ class Message extends Component {
                                 <span className="sc-message--username">{username}</span>
                             )}
                         {this._renderMessageOfType(type, message)}
-                        <div className="sc-message--date">{moment(date).format('LT')}</div>
+                        {showDate && (
+                            <div className="sc-message--date">{moment(date).format('LTS')}</div>
+                        )}
                     </div>
                 </div>
             </div>
