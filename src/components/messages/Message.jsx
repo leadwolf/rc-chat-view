@@ -12,7 +12,9 @@ import '../../styles/messages/message.css';
 import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI, messageType } from '../../types';
 
 class Message extends Component {
-    state = {};
+    state = {
+        canShowDate: this.props.canShowDate,
+    };
 
     _renderMessageOfType = (type, message) => {
         switch (type) {
@@ -26,6 +28,7 @@ class Message extends Component {
 
     handleMessageClick = e => {
         e.preventDefault();
+        this.setState(({ canShowDate }) => ({ canShowDate: !canShowDate }));
     };
 
     render() {
@@ -37,8 +40,8 @@ class Message extends Component {
             canShowAvatar,
             showUsername,
             showDate,
-            canShowDate,
         } = this.props;
+        const { canShowDate } = this.state;
 
         const messageIsMine = senderId === userId;
 
