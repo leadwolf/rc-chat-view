@@ -37,6 +37,11 @@
 .sc-message--text {
     padding: 8px 12px;
     border-radius: 6px;
+    cursor: pointer;
+}
+
+.sc-message--emoji {
+    cursor: pointer;
 }
 
 .sc-message--text h1,
