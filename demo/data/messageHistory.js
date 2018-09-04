@@ -151,9 +151,19 @@ function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-const history = base.map((message, index) => ({
-    ...message,
-    date: moment().add(index * getRandomArbitrary(1, 3), 's'),
-}));
+const baseMoment = moment();
+baseMoment.subtract(3 * base.length, 'seconds');
+
+let prevDate = baseMoment;
+
+const history = base.map(message => {
+    const date = moment(prevDate);
+    date.add(getRandomArbitrary(2, 3), 'seconds');
+    prevDate = date;
+    return {
+        ...message,
+        date,
+    };
+});
 
 export default history;
