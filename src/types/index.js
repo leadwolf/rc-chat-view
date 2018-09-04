@@ -22,7 +22,7 @@ const avatarType = PropTypes.shape({
     src: PropTypes.string,
 });
 
-const messageContentTypeValidator = (props, propName, componentName) => {
+export const messageContentTextValidator = (props, propName, componentName) => {
     if (props.type === MESSAGE_CONTENT_TYPE_EMOJI) {
         return null;
     }
@@ -33,7 +33,7 @@ const messageContentTypeValidator = (props, propName, componentName) => {
     }
 };
 
-const messageContentEmojiValidator = (props, propName, componentName) => {
+export const messageContentEmojiValidator = (props, propName, componentName) => {
     if (props.type === MESSAGE_CONTENT_TYPE_TEXT) {
         return null;
     }
@@ -54,7 +54,7 @@ export const messageType = PropTypes.shape({
     username: PropTypes.string,
     avatar: avatarType,
     type: PropTypes.oneOf([MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI]).isRequired,
-    text: messageContentTypeValidator,
+    text: messageContentTextValidator,
     emoji: messageContentEmojiValidator,
     date: PropTypes.oneOfType([momentPropTypes.momentString, momentPropTypes.momentObj]),
 });
