@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
+import moment from 'moment';
 
 import { Launcher } from '../../src';
 import messageHistory from '../data/messageHistory';
@@ -30,6 +31,7 @@ class Demo extends Component {
                     {
                         ...message,
                         id: `message_${messageList.length}`,
+                        date: moment(),
                     },
                 ],
             }));
