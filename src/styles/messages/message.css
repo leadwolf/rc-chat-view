@@ -92,12 +92,14 @@ p {
 .sc-message--date {
     padding-top: 5px;
     font-size: 70%;
+}
+
+.sc-message--date.open {
     max-height: 50px;
     transition: max-height 0.5s ease-in;
 }
 
 .sc-message--date.hidden {
-    /* padding: 0; */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;

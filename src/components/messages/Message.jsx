@@ -61,7 +61,7 @@ class Message extends Component {
                             )}
                         {this._renderMessageOfType(type, message)}
                         {showDate && (
-                            <div className={`sc-message--date ${canShowDate ? '' : 'hidden'}`}>
+                            <div className={`sc-message--date ${canShowDate ? 'open' : 'hidden'}`}>
                                 {moment(date).format('LTS')}
                             </div>
                         )}
