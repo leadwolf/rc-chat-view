@@ -17,6 +17,7 @@ class Demo extends Component {
         messageList: messageHistory,
         newMessagesCount: 0,
         isOpen: false,
+        user: 'chris',
     };
 
     appendMessage = message => {
@@ -38,6 +39,10 @@ class Demo extends Component {
         }
     };
 
+    setUser = name => {
+        this.setState({ user: name });
+    };
+
     _sendMessage = message => {
         this.appendMessage({
             ...message,
@@ -48,12 +53,18 @@ class Demo extends Component {
     };
 
     fakeReceiveMessage = text => {
+        const { user } = this.state;
+
+        const userInfo = {
+            senderId: `dummy_sender_${user === 'chris' ? 2 : 3}`,
+            username: user,
+            avatar: { name: user },
+        };
+
         this.appendMessage({
             type: 'text',
             text,
-            senderId: 'dummy_sender_2',
-            username: 'chris',
-            avatar: { name: 'chris' },
+            ...userInfo,
         });
     };
 
@@ -65,12 +76,12 @@ class Demo extends Component {
     };
 
     render() {
-        const { messageList, newMessagesCount, isOpen } = this.state;
+        const { messageList, newMessagesCount, isOpen, user } = this.state;
 
         return (
             <div>
                 <Header />
-                <TestArea onMessage={this.fakeReceiveMessage} />
+                <TestArea onMessage={this.fakeReceiveMessage} user={user} setUser={this.setUser} />
                 <Launcher
                     agentProfile={{
                         teamName: 'react-chat-view',

@@ -3,6 +3,8 @@ import '../assets/styles/test-area.css';
 
 class TestArea extends Component {
     render() {
+        const { user, setUser } = this.props;
+
         return (
             <div className="demo-test-area--wrapper">
                 <div className="demo-test-area--title">
@@ -33,6 +35,28 @@ class TestArea extends Component {
                         className="demo-test-area--text"
                         placeholder="Write a test message...."
                     />
+                    <div className="demo-test-area-user-selection">
+                        <button
+                            className={`demo-test-area--user-button ${
+                                user === 'chris' ? 'enabled' : ''
+                            }`}
+                            onClick={() => setUser('chris')}
+                            type="button"
+                        >
+                            {' '}
+                            Send as Chris{' '}
+                        </button>
+                        <button
+                            className={`demo-test-area--user-button ${
+                                user === 'james' ? 'enabled' : ''
+                            }`}
+                            onClick={() => setUser('james')}
+                            type="button"
+                        >
+                            {' '}
+                            Send as James{' '}
+                        </button>
+                    </div>
                     <button className="demo-test-area--button"> Send Message! </button>
                 </form>
                 <p className="demo-test-area--info">
