@@ -37,6 +37,7 @@ class Launcher extends Component {
             avatarTopPosition,
             showDate,
             minDateDiff,
+            isTyping,
         } = this.props;
 
         const isOpen = propIsOpen !== null ? propIsOpen : stateIsOpen;
@@ -64,6 +65,7 @@ class Launcher extends Component {
                     avatarTopPosition={avatarTopPosition}
                     showDate={showDate}
                     minDateDiff={minDateDiff}
+                    isTyping={isTyping}
                 />
             </div>
         );
@@ -86,12 +88,13 @@ Launcher.propTypes = {
     onMessageWasSent: PropTypes.func.isRequired,
     newMessagesCount: PropTypes.number,
 
-    showEmoji: PropTypes.bool,
-    showUsername: PropTypes.bool,
-    showAvatar: PropTypes.bool,
-    avatarTopPosition: PropTypes.bool,
-    showDate: PropTypes.bool,
+    showEmoji: PropTypes.bool, // show the emoji picker, does not change markdown emoji parsing
+    showUsername: PropTypes.bool, // globally enable/disable usernames
+    showAvatar: PropTypes.bool, // globally enable/disable avatars
+    avatarTopPosition: PropTypes.bool, // true for top, false for bottom
+    showDate: PropTypes.bool, // globally enable/disable dates
     minDateDiff: PropTypes.number, // the min amount of time betweeen messages to automatically display the date (in seconds)
+    isTyping: PropTypes.bool, // show typing indicator
 };
 
 Launcher.defaultProps = {
@@ -107,6 +110,7 @@ Launcher.defaultProps = {
     avatarTopPosition: false,
     showDate: true,
     minDateDiff: 60 * 5,
+    isTyping: false,
 };
 
 export default Launcher;

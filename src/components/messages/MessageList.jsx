@@ -6,6 +6,7 @@ import Message from './Message';
 import { messageArrayType } from '../../types';
 
 import '../../styles/messages/messageList.css';
+import TypingIndicator from './TypingIndicator';
 
 class MessageList extends Component {
     componentDidUpdate(prevProps, prevState) {
@@ -58,9 +59,12 @@ class MessageList extends Component {
     };
 
     render() {
+        const { isTyping } = this.props;
+
         return (
             <div className="sc-message-list" ref={el => (this.scrollList = el)}>
                 {this.messageList()}
+                {isTyping && <TypingIndicator nDots={5} />}
             </div>
         );
     }
@@ -75,6 +79,7 @@ MessageList.propTypes = {
     avatarTopPosition: PropTypes.bool.isRequired,
     showDate: PropTypes.bool.isRequired,
     minDateDiff: PropTypes.number.isRequired,
+    isTyping: PropTypes.bool.isRequired,
 };
 
 export default MessageList;
