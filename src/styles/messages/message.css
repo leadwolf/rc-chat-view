@@ -94,17 +94,6 @@ p {
     font-size: 70%;
 }
 
-.sc-message--date.open {
-    max-height: 50px;
-    transition: max-height 0.5s ease-in;
-}
-
-.sc-message--date.hidden {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-}
-
 .sc-message--content.sent .sc-message--text {
     color: white;
     background-color: #4e8cff;

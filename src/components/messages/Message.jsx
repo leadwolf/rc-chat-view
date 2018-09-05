@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Avatar from 'react-avatar';
 import moment from 'moment';
 
+import AnimateHeight from 'react-animate-height';
+
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
 
@@ -61,9 +63,13 @@ class Message extends Component {
                             )}
                         {this._renderMessageOfType(type, message)}
                         {showDate && (
-                            <div className={`sc-message--date ${canShowDate ? 'open' : 'hidden'}`}>
+                            <AnimateHeight
+                                duration={500}
+                                height={canShowDate ? 'auto' : '0'}
+                                className="sc-message--date"
+                            >
                                 {moment(date).format('LTS')}
-                            </div>
+                            </AnimateHeight>
                         )}
                     </div>
                 </div>

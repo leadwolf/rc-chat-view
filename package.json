@@ -73,6 +73,7 @@
         "markdown-it-emoji": "^1.4.0",
         "moment": "^2.22.2",
         "prop-types": "^15.6.2",
+        "react-animate-height": "^2.0.4",
         "react-avatar": "^3.2.0",
         "react-hot-loader": "^4.3.5",
         "react-moment-proptypes": "^1.6.0"
