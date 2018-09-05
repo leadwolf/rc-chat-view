@@ -35,6 +35,7 @@
 
 .sc-message--username {
     font-size: 80%;
+    font-weight: bold;
 }
 
 .sc-message--text {
