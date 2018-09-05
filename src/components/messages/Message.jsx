@@ -23,7 +23,6 @@ class Message extends Component {
     static getDerivedStateFromProps(nextProps, prevState) {
         const { shouldShowDate } = nextProps;
         const { canShowDate, prevPropShouldShowDate, toggleState } = prevState;
-        console.log(shouldShowDate, prevPropShouldShowDate, canShowDate, toggleState);
 
         if (!toggleState) {
             return { canShowDate: false, prevPropShouldShowDate };

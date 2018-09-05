@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
+import AnimateHeight from 'react-animate-height';
+
 import Message from './Message';
 import { messageArrayType } from '../../types';
 
@@ -64,7 +66,13 @@ class MessageList extends Component {
         return (
             <div className="sc-message-list" ref={el => (this.scrollList = el)}>
                 {this.messageList()}
-                {isTyping && <TypingIndicator nDots={5} />}
+                <AnimateHeight
+                    duration={500}
+                    height={isTyping ? 'auto' : '0'}
+                    className="sc-message--date"
+                >
+                    <TypingIndicator nDots={5} />
+                </AnimateHeight>
             </div>
         );
     }
