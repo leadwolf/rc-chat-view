@@ -36,6 +36,7 @@ class Launcher extends Component {
             showAvatar,
             avatarTopPosition,
             showDate,
+            minDateDiff,
         } = this.props;
 
         const isOpen = propIsOpen !== null ? propIsOpen : stateIsOpen;
@@ -62,6 +63,7 @@ class Launcher extends Component {
                     showAvatar={showAvatar}
                     avatarTopPosition={avatarTopPosition}
                     showDate={showDate}
+                    minDateDiff={minDateDiff}
                 />
             </div>
         );
@@ -89,6 +91,7 @@ Launcher.propTypes = {
     showAvatar: PropTypes.bool,
     avatarTopPosition: PropTypes.bool,
     showDate: PropTypes.bool,
+    minDateDiff: PropTypes.number, // the min amount of time betweeen messages to automatically display the date (in seconds)
 };
 
 Launcher.defaultProps = {
@@ -103,6 +106,7 @@ Launcher.defaultProps = {
     showAvatar: true,
     avatarTopPosition: false,
     showDate: true,
+    minDateDiff: 60 * 5,
 };
 
 export default Launcher;

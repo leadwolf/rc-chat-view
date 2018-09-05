@@ -7,8 +7,6 @@ import { messageArrayType } from '../../types';
 
 import '../../styles/messages/messageList.css';
 
-const DATE_MIN_DIFF_SEC = 10;
-
 class MessageList extends Component {
     componentDidUpdate(prevProps, prevState) {
         this.scrollList.scrollTop = this.scrollList.scrollHeight;
@@ -22,6 +20,7 @@ class MessageList extends Component {
             showAvatar: propShowAvatar,
             avatarTopPosition,
             showDate,
+            minDateDiff,
         } = this.props;
         let lastSenderId = '';
 
@@ -36,7 +35,7 @@ class MessageList extends Component {
                     ? moment(message.date).diff(moment(messages[index - 1].date), 'seconds')
                     : 0;
 
-            const shouldShowDate = index === 0 || dateDiff >= DATE_MIN_DIFF_SEC;
+            const shouldShowDate = index === 0 || dateDiff >= minDateDiff;
 
             const messageComp = (
                 <Message
@@ -75,6 +74,7 @@ MessageList.propTypes = {
     showAvatar: PropTypes.bool.isRequired,
     avatarTopPosition: PropTypes.bool.isRequired,
     showDate: PropTypes.bool.isRequired,
+    minDateDiff: PropTypes.number.isRequired,
 };
 
 export default MessageList;
