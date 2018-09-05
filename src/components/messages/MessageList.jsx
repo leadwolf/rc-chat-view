@@ -36,7 +36,7 @@ class MessageList extends Component {
                     ? moment(message.date).diff(moment(messages[index - 1].date), 'seconds')
                     : 0;
 
-            const canShowDate =
+            const shouldShowDate =
                 index === 0 || index === messages.length - 1 || dateDiff >= DATE_MIN_DIFF_SEC;
 
             const messageComp = (
@@ -48,7 +48,7 @@ class MessageList extends Component {
                     showAvatar={propShowAvatar}
                     canShowAvatar={canShowAvatar}
                     showDate={showDate}
-                    canShowDate={canShowDate}
+                    shouldShowDate={shouldShowDate}
                 />
             );
 

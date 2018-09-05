@@ -15,7 +15,7 @@ import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI, messageType } fr
 
 class Message extends Component {
     state = {
-        canShowDate: this.props.canShowDate,
+        canShowDate: this.props.shouldShowDate,
     };
 
     _renderMessageOfType = (type, message) => {
@@ -86,7 +86,7 @@ Message.propTypes = {
     canShowAvatar: PropTypes.bool.isRequired, // if the avatar should be displayed or whitespace
     showUsername: PropTypes.bool.isRequired,
     showDate: PropTypes.bool.isRequired,
-    canShowDate: PropTypes.bool.isRequired,
+    shouldShowDate: PropTypes.bool.isRequired,
 };
 
 export default Message;
