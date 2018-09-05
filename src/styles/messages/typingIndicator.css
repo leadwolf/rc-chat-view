@@ -1,11 +1,10 @@
 .typing-indicator {
+    margin-left: 55px;
     background-color: #f4f7f9;
     width: auto;
     border-radius: 50px;
     padding: 15px;
-    display: table;
-    margin: 0 auto;
-    position: relative;
+    display: inline-flex;
 }
 
 .typing-indicator span {
