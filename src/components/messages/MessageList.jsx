@@ -73,6 +73,7 @@ class MessageList extends Component {
                 >
                     <TypingIndicator nDots={5} />
                 </AnimateHeight>
+                <div style={{ paddingBottom: '15px' }} />
             </div>
         );
     }

@@ -26,6 +26,7 @@ class Demo extends Component {
     };
 
     setIsTyping = status => {
+        // you can debounce this in your app
         this.setState({ isTyping: status });
     };
 
