@@ -18,6 +18,15 @@ class Demo extends Component {
         newMessagesCount: 0,
         isOpen: false,
         user: 'chris',
+        isTyping: false,
+    };
+
+    setUser = name => {
+        this.setState({ user: name });
+    };
+
+    setIsTyping = status => {
+        this.setState({ isTyping: status });
     };
 
     appendMessage = message => {
@@ -37,10 +46,6 @@ class Demo extends Component {
                 ],
             }));
         }
-    };
-
-    setUser = name => {
-        this.setState({ user: name });
     };
 
     _sendMessage = message => {
@@ -76,12 +81,17 @@ class Demo extends Component {
     };
 
     render() {
-        const { messageList, newMessagesCount, isOpen, user } = this.state;
+        const { messageList, newMessagesCount, isOpen, user, isTyping } = this.state;
 
         return (
             <div>
                 <Header />
-                <TestArea onMessage={this.fakeReceiveMessage} user={user} setUser={this.setUser} />
+                <TestArea
+                    onMessage={this.fakeReceiveMessage}
+                    user={user}
+                    setUser={this.setUser}
+                    setIsTyping={this.setIsTyping}
+                />
                 <Launcher
                     agentProfile={{
                         teamName: 'react-chat-view',
@@ -94,6 +104,7 @@ class Demo extends Component {
                     isOpen={isOpen}
                     showEmoji
                     userId="dummy_sender_1"
+                    isTyping={isTyping}
                 />
                 <img className="demo-monster-img" src={monsterImgUrl} alt="monster" />
                 <Footer />

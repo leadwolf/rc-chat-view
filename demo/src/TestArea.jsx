@@ -19,7 +19,7 @@ class TestArea extends Component {
     };
 
     render() {
-        const { user, setUser } = this.props;
+        const { user, setUser, setIsTyping } = this.props;
 
         return (
             <div className="demo-test-area--wrapper">
@@ -48,6 +48,8 @@ class TestArea extends Component {
                             this.textArea = e;
                         }}
                         onKeyDown={this.handleKey}
+                        onFocus={() => setIsTyping(true)}
+                        onBlur={() => setIsTyping(false)}
                         className="demo-test-area--text"
                         placeholder="Write a test message...."
                     />
