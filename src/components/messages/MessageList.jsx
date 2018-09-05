@@ -48,6 +48,7 @@ class MessageList extends Component {
                     canShowAvatar={canShowAvatar}
                     showDate={showDate}
                     shouldShowDate={shouldShowDate}
+                    expand={lastSenderIsDiff}
                 />
             );
 

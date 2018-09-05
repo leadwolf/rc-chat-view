@@ -61,13 +61,14 @@ class Message extends Component {
             canShowAvatar,
             showUsername,
             showDate,
+            expand,
         } = this.props;
         const { canShowDate } = this.state;
 
         const messageIsMine = senderId === userId;
 
         return (
-            <div className="sc-message">
+            <div className={`sc-message ${expand ? 'expand' : ''}`}>
                 <div className={`sc-message--content ${messageIsMine ? 'sent' : 'received'}`}>
                     {!messageIsMine &&
                         showAvatar && (
@@ -106,6 +107,7 @@ Message.propTypes = {
     showUsername: PropTypes.bool.isRequired,
     showDate: PropTypes.bool.isRequired,
     shouldShowDate: PropTypes.bool.isRequired,
+    expand: PropTypes.bool.isRequired,
 };
 
 export default Message;
