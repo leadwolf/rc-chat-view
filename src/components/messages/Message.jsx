@@ -16,7 +16,24 @@ import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI, messageType } fr
 class Message extends Component {
     state = {
         canShowDate: this.props.shouldShowDate,
+        toggleState: this.props.shouldShowDate,
+        prevPropShouldShowDate: this.props.shouldShowDate,
     };
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        const { shouldShowDate } = nextProps;
+        const { canShowDate, prevPropShouldShowDate, toggleState } = prevState;
+        console.log(shouldShowDate, prevPropShouldShowDate, canShowDate, toggleState);
+
+        if (!toggleState) {
+            return { canShowDate: false, prevPropShouldShowDate };
+        }
+
+        if ((prevPropShouldShowDate && shouldShowDate) || toggleState) {
+            return { canShowDate: true, prevPropShouldShowDate };
+        }
+        return { canShowDate: false, prevPropShouldShowDate };
+    }
 
     _renderMessageOfType = (type, message) => {
         switch (type) {
@@ -30,7 +47,9 @@ class Message extends Component {
 
     handleMessageClick = e => {
         e.preventDefault();
-        this.setState(({ canShowDate }) => ({ canShowDate: !canShowDate }));
+        this.setState(({ canShowDate }) => ({
+            toggleState: !canShowDate,
+        }));
     };
 
     render() {

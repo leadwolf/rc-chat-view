@@ -36,8 +36,7 @@ class MessageList extends Component {
                     ? moment(message.date).diff(moment(messages[index - 1].date), 'seconds')
                     : 0;
 
-            const shouldShowDate =
-                index === 0 || index === messages.length - 1 || dateDiff >= DATE_MIN_DIFF_SEC;
+            const shouldShowDate = index === 0 || dateDiff >= DATE_MIN_DIFF_SEC;
 
             const messageComp = (
                 <Message
