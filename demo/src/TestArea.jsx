@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import '../assets/styles/test-area.css';
 
 class TestArea extends Component {
+    handleKey = event => {
+        if (event.keyCode === 13 && !event.shiftKey) {
+            event.preventDefault();
+            this.sendMessage();
+        }
+    };
+
+    sendMessage = () => {
+        const { value } = this.textArea;
+        const { onMessage } = this.props;
+        if (value) {
+            onMessage(value);
+            this.textArea.value = '';
+        }
+    };
+
     render() {
         const { user, setUser } = this.props;
 
@@ -21,8 +37,7 @@ class TestArea extends Component {
                     className="demo-test-area"
                     onSubmit={e => {
                         e.preventDefault();
-                        this.props.onMessage(this.textArea.value);
-                        this.textArea.value = '';
+                        this.sendMessage();
                     }}
                 >
                     <div className="demo-test-area--preamble">
@@ -32,6 +47,7 @@ class TestArea extends Component {
                         ref={e => {
                             this.textArea = e;
                         }}
+                        onKeyDown={this.handleKey}
                         className="demo-test-area--text"
                         placeholder="Write a test message...."
                     />
