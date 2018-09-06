@@ -11,7 +11,7 @@ const ChatWindow = ({
     messageList,
     onUserInputSubmit,
     isOpen,
-    headerConfig: { headerName, imageUrl },
+    headerConfig,
     onClose,
     showEmoji,
     showUsername,
@@ -22,7 +22,7 @@ const ChatWindow = ({
     isTyping,
 }) => (
     <div className={`sc-chat-window ${isOpen ? 'opened' : 'closed'}`}>
-        <Header headerName={headerName} imageUrl={imageUrl} onClose={onClose} />
+        <Header {...headerConfig} onClose={onClose} />
         <MessageList
             messages={messageList}
             userId={userId}
@@ -47,8 +47,9 @@ ChatWindow.propTypes = {
     isOpen: PropTypes.bool.isRequired,
 
     headerConfig: PropTypes.shape({
-        headerName: PropTypes.string.isRequired,
-        imageUrl: PropTypes.string.isRequired,
+        headerName: PropTypes.string,
+        imageUrl: PropTypes.string,
+        onHeaderNameClick: PropTypes.func,
     }).isRequired,
 
     showEmoji: PropTypes.bool.isRequired,
