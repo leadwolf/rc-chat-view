@@ -30,11 +30,11 @@
     padding: 10px;
     flex: 1;
     user-select: none;
-    cursor: pointer;
     border-radius: 5px;
 }
 
-.sc-header--team-name:hover {
+.sc-header--team-name.enabled:hover {
+    cursor: pointer;
     background: #4882ed;
 }
 
