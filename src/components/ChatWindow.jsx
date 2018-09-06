@@ -25,7 +25,6 @@ const ChatWindow = ({
         <Header teamName={teamName} imageUrl={imageUrl} onClose={onClose} />
         <MessageList
             messages={messageList}
-            imageUrl={imageUrl}
             userId={userId}
             showUsername={showUsername}
             showAvatar={showAvatar}
