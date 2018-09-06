@@ -5,7 +5,7 @@
     "main": "dist/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --mode development --hot",
+        "start": "webpack-dev-server --mode development --hot --port 3000 --open",
         "transpile": "babel src -d dist --copy-files",
         "prepublishOnly": "npm run transpile",
         "build": "webpack --mode production",
