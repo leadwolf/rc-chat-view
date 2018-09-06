@@ -38,8 +38,8 @@ export const messageContentEmojiValidator = (props, propName, componentName) => 
     }
     if (
         props.type === MESSAGE_CONTENT_TYPE_EMOJI &&
-        !_.isObject(props[propName]) &&
-        !_.isString(props[propName])
+        typeof props[propName] !== 'object' &&
+        typeof props[propName] !== 'string'
     ) {
         return new Error(
             `Invalid prop '${propName}' supplied to ${componentName}. Validation failed`
