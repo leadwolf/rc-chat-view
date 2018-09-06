@@ -12,11 +12,20 @@ const Header = ({ imageUrl, headerName, onClose, onHeaderNameClick }) => (
         <div
             className={`sc-header--team-name ${headerName && onHeaderNameClick ? 'enabled' : ''}`}
             onClick={onHeaderNameClick}
+            onKeyPress={onHeaderNameClick}
+            role="button"
+            tabIndex={0}
         >
             {' '}
             {headerName}{' '}
         </div>
-        <div className="sc-header--close-button" onClick={onClose}>
+        <div
+            className="sc-header--close-button"
+            onClick={onClose}
+            onKeyPress={onClose}
+            role="button"
+            tabIndex={0}
+        >
             <img src={closeIcon} alt="" />
         </div>
     </div>

@@ -8,6 +8,8 @@ import { messageContentTextValidator } from '../../types';
 const MarkdownIt = require('markdown-it');
 const emoji = require('markdown-it-emoji');
 
+/* eslint react/no-danger: 0, react/require-default-props: 0 */
+
 const md = new MarkdownIt({
     html: true,
     linkify: true,
@@ -28,6 +30,9 @@ const TextMessage = ({ text, onClick }) => {
             className="sc-message--text"
             dangerouslySetInnerHTML={renderMarkdown()}
             onClick={onClick}
+            onKeyPress={onclick}
+            role="button"
+            tabIndex={0}
         />
     );
 };

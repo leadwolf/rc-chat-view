@@ -11,7 +11,7 @@ import '../../styles/messages/messageList.css';
 import TypingIndicator from './TypingIndicator';
 
 class MessageList extends Component {
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate() {
         this.scrollList.scrollTop = this.scrollList.scrollHeight;
     }
 

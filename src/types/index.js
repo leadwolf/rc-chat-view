@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 
 const momentPropTypes = require('react-moment-proptypes');
 
+/* eslint react/destructuring-assignment: 0 */
+
 export const MESSAGE_CONTENT_TYPE_TEXT = 'text';
 export const MESSAGE_CONTENT_TYPE_EMOJI = 'emoji';
 
@@ -30,6 +32,7 @@ export const messageContentTextValidator = (props, propName, componentName) => {
             `Invalid prop '${propName}' supplied to ${componentName}. Validation failed`
         );
     }
+    return null;
 };
 
 export const messageContentEmojiValidator = (props, propName, componentName) => {
@@ -45,6 +48,7 @@ export const messageContentEmojiValidator = (props, propName, componentName) => 
             `Invalid prop '${propName}' supplied to ${componentName}. Validation failed`
         );
     }
+    return null;
 };
 
 export const messageType = PropTypes.shape({

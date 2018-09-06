@@ -45,7 +45,13 @@ class Launcher extends Component {
         return (
             <div>
                 <div />
-                <div className={`sc-launcher ${isOpen ? 'opened' : ''}`} onClick={this.handleClick}>
+                <div
+                    className={`sc-launcher ${isOpen ? 'opened' : ''}`}
+                    onClick={this.handleClick}
+                    onKeyPress={this.handleClick}
+                    role="button"
+                    tabIndex={0}
+                >
                     <MessageCount count={newMessagesCount} isOpen={isOpen} />
 
                     {/* css manages state via class */}
