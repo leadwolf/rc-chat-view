@@ -79,14 +79,14 @@ const MessageCount = ({ count, isOpen }) => {
 };
 
 Launcher.propTypes = {
-    userId: PropTypes.string.isRequired,
+    userId: PropTypes.string.isRequired, // the user's id. Used to determine whether a message is his or not (display right/left)
 
-    isOpen: PropTypes.bool, // leave null to handle state internally
-    handleClick: PropTypes.func, // fired on button click and header close
+    isOpen: PropTypes.bool, // leave null or dont set to handle state internally
+    handleClick: PropTypes.func, // fired on button click and header close, use this to determine your own `isOpen` state
 
-    messageList: messageArrayType,
-    onMessageWasSent: PropTypes.func.isRequired,
-    newMessagesCount: PropTypes.number,
+    messageList: messageArrayType, // the array of messages to display
+    onMessageWasSent: PropTypes.func.isRequired, // Called when the user submits text or an emoji. Passes a single object parameter with keys `text` and `text/emoji`
+    newMessagesCount: PropTypes.number, // the number for the unread messages counter
 
     showEmoji: PropTypes.bool, // show the emoji picker, does not change markdown emoji parsing
     showUsername: PropTypes.bool, // globally enable/disable usernames
