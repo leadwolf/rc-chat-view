@@ -103,7 +103,9 @@
 }
 
 .sc-user-input--emoji-icon path,
-.sc-user-input--emoji-icon circle {
+.sc-user-input--emoji-icon circle,
+.sc-user-input--send-icon path,
+.sc-user-input--send-icon circle {
     fill: rgba(86, 88, 103, 0.3);
 }
 
@@ -112,6 +114,18 @@
 .sc-user-input--emoji-icon.active path,
 .sc-user-input--emoji-icon.active circle,
 .sc-user-input--emoji-icon:hover path,
-.sc-user-input--emoji-icon:hover circle {
+.sc-user-input--emoji-icon:hover circle,
+.sc-user-input--send-icon-wrapper:focus .sc-user-input--send-icon path,
+.sc-user-input--send-icon-wrapper:focus .sc-user-input--send-icon circle,
+.sc-user-input--send-icon.active path,
+.sc-user-input--send-icon.active circle,
+.sc-user-input--send-icon:hover path,
+.sc-user-input--send-icon:hover circle {
     fill: rgba(86, 88, 103, 1);
+}
+
+.sc-user-input--send-icon {
+    height: 18px;
+    cursor: pointer;
+    align-self: center;
 }
