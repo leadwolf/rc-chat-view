@@ -1,7 +1,7 @@
 {
     "name": "react-chat-view",
     "version": "1.0.0",
-    "description": "simple chat component for React",
+    "description": "Fully customisable chat widgt for React",
     "main": "dist/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,7 +24,8 @@
         "messenger",
         "conversation",
         "ui",
-        "react-component"
+        "react-component",
+        "emoji"
     ],
     "author": "Christopher Caroni",
     "license": "MIT",
