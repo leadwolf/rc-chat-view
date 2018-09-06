@@ -11,7 +11,7 @@ const ChatWindow = ({
     messageList,
     onUserInputSubmit,
     isOpen,
-    agentProfile: { teamName, imageUrl },
+    agentProfile: { headerName, imageUrl },
     onClose,
     showEmoji,
     showUsername,
@@ -22,7 +22,7 @@ const ChatWindow = ({
     isTyping,
 }) => (
     <div className={`sc-chat-window ${isOpen ? 'opened' : 'closed'}`}>
-        <Header teamName={teamName} imageUrl={imageUrl} onClose={onClose} />
+        <Header headerName={headerName} imageUrl={imageUrl} onClose={onClose} />
         <MessageList
             messages={messageList}
             userId={userId}
@@ -47,7 +47,7 @@ ChatWindow.propTypes = {
     isOpen: PropTypes.bool.isRequired,
 
     agentProfile: PropTypes.shape({
-        teamName: PropTypes.string.isRequired,
+        headerName: PropTypes.string.isRequired,
         imageUrl: PropTypes.string.isRequired,
     }).isRequired,
 

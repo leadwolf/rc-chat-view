@@ -95,7 +95,7 @@ class Demo extends Component {
                 />
                 <Launcher
                     agentProfile={{
-                        teamName: 'react-chat-view',
+                        headerName: 'react-chat-view',
                         imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
                     }}
                     onMessageWasSent={this._sendMessage}

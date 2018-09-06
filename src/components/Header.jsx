@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import closeIcon from '../assets/close-icon.png';
 import '../styles/header.css';
 
-const Header = ({ imageUrl, teamName, onClose }) => (
+const Header = ({ imageUrl, headerName, onClose }) => (
     <div className="sc-header">
         <img className="sc-header--img" src={imageUrl} alt="" />
-        <div className="sc-header--team-name"> {teamName} </div>
+        <div className="sc-header--team-name"> {headerName} </div>
         <div className="sc-header--close-button" onClick={onClose}>
             <img src={closeIcon} alt="" />
         </div>
@@ -16,7 +16,7 @@ const Header = ({ imageUrl, teamName, onClose }) => (
 
 Header.propTypes = {
     imageUrl: PropTypes.string.isRequired,
-    teamName: PropTypes.string.isRequired,
+    headerName: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,
 };
 
