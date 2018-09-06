@@ -8,7 +8,6 @@ import AnimateHeight from 'react-animate-height';
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
 
-import chatIconUrl from '../../assets/chat-icon.svg';
 import '../../styles/messages/message.css';
 
 import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI, messageType } from '../../types';
@@ -22,7 +21,7 @@ class Message extends Component {
 
     static getDerivedStateFromProps(nextProps, prevState) {
         const { shouldShowDate } = nextProps;
-        const { canShowDate, prevPropShouldShowDate, toggleState } = prevState;
+        const { prevPropShouldShowDate, toggleState } = prevState;
 
         if (!toggleState) {
             return { canShowDate: false, prevPropShouldShowDate };
