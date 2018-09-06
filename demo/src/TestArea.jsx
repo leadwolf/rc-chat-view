@@ -24,7 +24,7 @@ class TestArea extends Component {
         return (
             <div className="demo-test-area--wrapper">
                 <div className="demo-test-area--title">
-                    <div className="demo-test-area--title-main">react-chat-view demo</div>
+                    <div className="demo-test-area--title-main">rc-chat-view demo</div>
                     <div className="demo-test-area--title-sub">made by Christopher Caroni</div>
                     <div>
                         <p className="demo-test-area--info top">
@@ -81,13 +81,13 @@ class TestArea extends Component {
                     </button>
                 </form>
                 <p className="demo-test-area--info main">
-                    react-chat-view is a chat window that allows you to build and add custom live
-                    chat to your sites. It includes only the react chat widget. There is no backend,
-                    and no communication system baked in.
+                    rc-chat-view is a chat window that allows you to build and add custom live chat
+                    to your sites. It includes only the react chat widget. There is no backend, and
+                    no communication system baked in.
                     <br />
                     <br />
-                    For instructions on how to use react-chat-view click{' '}
-                    <a href="https://github.com/Christopher-Caroni/react-chat-view">here</a>.
+                    For instructions on how to use rc-chat-view click{' '}
+                    <a href="https://github.com/Christopher-Caroni/rc-chat-view">here</a>.
                 </p>
             </div>
         );

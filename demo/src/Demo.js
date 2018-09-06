@@ -95,7 +95,7 @@ class Demo extends Component {
                 />
                 <Launcher
                     headerConfig={{
-                        headerName: 'react-chat-view',
+                        headerName: 'rc-chat-view',
                         imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
                     }}
                     onMessageWasSent={this._sendMessage}

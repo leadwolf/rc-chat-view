@@ -1,7 +1,7 @@
 {
     "name": "rc-chat-view",
-    "version": "1.0.0",
-    "description": "Fully customisable chat widgt for React",
+    "version": "1.0.2",
+    "description": "Fully customisable chat widget for React",
     "main": "dist/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Christopher-Caroni/react-chat-view.git"
+        "url": "git+https://github.com/Christopher-Caroni/rc-chat-view.git"
     },
     "keywords": [
         "react",
@@ -30,9 +30,9 @@
     "author": "Christopher Caroni",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Christopher-Caroni/react-chat-view/issues"
+        "url": "https://github.com/Christopher-Caroni/rc-chat-view/issues"
     },
-    "homepage": "https://github.com/Christopher-Caroni/react-chat-view#readme",
+    "homepage": "https://github.com/Christopher-Caroni/rc-chat-view#readme",
     "peerDependencies": {
         "react": "^16.4.0",
         "react-dom": "^16.4.0"

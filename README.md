@@ -1,7 +1,7 @@
 <div align="center">
-  <br><b>react-chat-view</b> is a backend-free React<br>component to handle chat messaging
-  <br><a href="https://react-chat-view.ccaroni.com/">Check out the online demo</a>
-  <br><br><img width="338" alt="picker" src="https://github.com/Christopher-Caroni/react-chat-view/blob/f37a7cd772d693f27b81565fdabb5037d9a8de30/docs/screens/react-chat-view-v0.1-min.gif">
+  <br><b>rc-chat-view</b> is a backend-free React<br>component to handle chat messaging
+  <br><a href="https://rc-chat-view.ccaroni.com/">Check out the online demo</a>
+  <br><br><img width="338" alt="picker" src="https://raw.githubusercontent.com/Christopher-Caroni/rc-chat-view/master/docs/screens/react-chat-view-v0.1-min.gif">
 </div>
 
 ## Inspiration
@@ -10,10 +10,10 @@ Please go check out the original source from [kingofthestack/react-chat-window](
 
 ## Installation
 
--   `npm install --save react-chat-view`
--   `import { Launcher } from 'react-chat`
+-   `npm install --save rc-chat-view`
+-   `import { Launcher } from 'rc-chat-view`
 -   OR
--   `const Launcher = require('react-chat-view').Launcher`
+-   `const Launcher = require('rc-chat-view').Launcher`
 
 ## Features
 
