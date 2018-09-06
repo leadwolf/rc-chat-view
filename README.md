@@ -4,8 +4,9 @@ Original source from [kingofthestack/react-chat-window](https://github.com/kingo
 
 `react-chat-view` provides an intercom-like chat window that can be included easily in any project for free. It provides no messaging facilities, only the view component.
 
-v0.1  
-See video in `docs/screens` for higher quality  
+## Demo
+[Try out the online demo](https://react-chat-view.ccaroni.com/)
+
 ![Demo gif](./docs/screens/react-chat-view-v0.1-min.gif)
 
 ## Features
