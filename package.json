@@ -1,5 +1,5 @@
 {
-    "name": "react-chat-view",
+    "name": "rc-chat-view",
     "version": "1.0.0",
     "description": "Fully customisable chat widgt for React",
     "main": "dist/index.js",
