@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Picker } from 'emoji-mart';
+import { NimblePicker } from 'emoji-mart';
+import data from 'emoji-mart/data/apple.json';
 import 'emoji-mart/css/emoji-mart.css';
 
 import '../../styles/emojiPicker.css';
@@ -38,7 +39,7 @@ class EmojiPicker extends Component {
     render() {
         return (
             <div tabIndex="0" className="sc-emoji-picker" ref={e => (this.domNode = e)}>
-                <Picker autoFocus onSelect={this.onEmojiPicked} set="apple" />
+                <NimblePicker autoFocus onSelect={this.onEmojiPicked} set="apple" data={data} />
             </div>
         );
     }
