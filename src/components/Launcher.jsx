@@ -30,7 +30,7 @@ class Launcher extends Component {
             newMessagesCount,
             messageList,
             onMessageWasSent,
-            agentProfile,
+            headerConfig,
             showEmoji,
             showUsername,
             showAvatar,
@@ -58,7 +58,7 @@ class Launcher extends Component {
                     onClose={this.handleClick}
                     messageList={messageList}
                     onUserInputSubmit={onMessageWasSent}
-                    agentProfile={agentProfile}
+                    headerConfig={headerConfig}
                     showEmoji={showEmoji}
                     showUsername={showUsername}
                     showAvatar={showAvatar}

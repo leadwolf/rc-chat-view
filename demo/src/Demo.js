@@ -94,7 +94,7 @@ class Demo extends Component {
                     setIsTyping={this.setIsTyping}
                 />
                 <Launcher
-                    agentProfile={{
+                    headerConfig={{
                         headerName: 'react-chat-view',
                         imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
                     }}
@@ -103,7 +103,6 @@ class Demo extends Component {
                     newMessagesCount={newMessagesCount}
                     handleClick={this._handleClick}
                     isOpen={isOpen}
-                    showEmoji
                     userId="dummy_sender_1"
                     isTyping={isTyping}
                 />

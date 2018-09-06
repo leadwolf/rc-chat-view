@@ -11,7 +11,7 @@ const ChatWindow = ({
     messageList,
     onUserInputSubmit,
     isOpen,
-    agentProfile: { headerName, imageUrl },
+    headerConfig: { headerName, imageUrl },
     onClose,
     showEmoji,
     showUsername,
@@ -46,7 +46,7 @@ ChatWindow.propTypes = {
     onUserInputSubmit: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
 
-    agentProfile: PropTypes.shape({
+    headerConfig: PropTypes.shape({
         headerName: PropTypes.string.isRequired,
         imageUrl: PropTypes.string.isRequired,
     }).isRequired,
