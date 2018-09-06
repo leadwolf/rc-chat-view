@@ -9,7 +9,7 @@
         "transpile": "babel src -d dist --copy-files",
         "prepublishOnly": "npm run transpile",
         "build": "webpack --mode production",
-        "deploy": "gh-pages -d demo/dist",
+        "deploy": "npx gh-pages -d demo/dist",
         "publish-demo": "npm run build && npm run deploy"
     },
     "repository": {
@@ -55,6 +55,7 @@
         "eslint-plugin-prettier": "^2.6.2",
         "eslint-plugin-react": "^7.11.1",
         "file-loader": "^2.0.0",
+        "gh-pages": "^1.2.0",
         "html-webpack-plugin": "^3.2.0",
         "prettier-eslint": "^8.8.2",
         "react": "^16.4.2",
