@@ -5,10 +5,10 @@
     "main": "dist/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --mode development --hot --port 3000 --open",
+        "start": "webpack-dev-server --hot --config webpack.dev.js",
         "transpile": "babel src -d dist --copy-files",
         "prepublishOnly": "npm run transpile",
-        "build": "webpack --mode production",
+        "build": "webpack  --config webpack.prod.js",
         "deploy": "npx gh-pages -d demo/dist -b gh-pages",
         "publish-demo": "npm run build && npm run deploy"
     },
@@ -65,7 +65,8 @@
         "webpack": "^4.17.1",
         "webpack-bundle-analyzer": "^2.13.1",
         "webpack-cli": "^3.1.0",
-        "webpack-dev-server": "^3.1.6"
+        "webpack-dev-server": "^3.1.6",
+        "webpack-merge": "^4.1.4"
     },
     "dependencies": {
         "babel-plugin-lodash": "^3.3.4",

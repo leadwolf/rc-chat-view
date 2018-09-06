@@ -2,13 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
     template: path.join(__dirname, 'demo/src/index.html'),
     filename: './index.html',
 });
-const bundleAnalyzerPlugin = new BundleAnalyzerPlugin();
 
 module.exports = {
     entry: path.join(__dirname, 'demo/src/index.js'),
@@ -43,7 +41,6 @@ module.exports = {
     },
     plugins: [
         htmlWebpackPlugin,
-        bundleAnalyzerPlugin,
         // Ignore all locale files of moment.js
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ],
