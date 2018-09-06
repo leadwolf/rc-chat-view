@@ -59,3 +59,9 @@ export const messageType = PropTypes.shape({
 });
 
 export const messageArrayType = PropTypes.arrayOf(messageType);
+
+export const headerConfigType = PropTypes.shape({
+    imageUrl: PropTypes.string,
+    headerName: PropTypes.string,
+    onHeaderNameClick: PropTypes.func,
+});

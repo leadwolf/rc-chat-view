@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ChatWindow from './ChatWindow';
 import launcherIcon from '../assets/logo-no-bg.svg';
 import launcherIconActive from '../assets/close-icon.png';
-import { messageArrayType } from '../types';
+import { messageArrayType, headerConfigType } from '../types';
 
 import '../styles/launcher.css';
 
@@ -83,6 +83,7 @@ Launcher.propTypes = {
 
     isOpen: PropTypes.bool, // leave null or dont set to handle state internally
     handleClick: PropTypes.func, // fired on button click and header close, use this to determine your own `isOpen` state
+    headerConfig: headerConfigType,
 
     messageList: messageArrayType, // the array of messages to display
     onMessageWasSent: PropTypes.func.isRequired, // Called when the user submits text or an emoji. Passes a single object parameter with keys `text` and `text/emoji`
@@ -100,6 +101,11 @@ Launcher.propTypes = {
 Launcher.defaultProps = {
     isOpen: null,
     handleClick: undefined,
+    headerConfig: {
+        imageUrl: '',
+        headerName: '',
+        onHeaderNameClick: () => undefined,
+    },
 
     messageList: [],
     newMessagesCount: 0,

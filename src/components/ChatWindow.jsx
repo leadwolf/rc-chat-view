@@ -4,7 +4,7 @@ import MessageList from './messages/MessageList';
 import UserInput from './UserInput';
 import Header from './Header';
 import '../styles/chatWindow.css';
-import { messageArrayType } from '../types';
+import { messageArrayType, headerConfigType } from '../types';
 
 const ChatWindow = ({
     userId,
@@ -45,12 +45,7 @@ ChatWindow.propTypes = {
 
     onUserInputSubmit: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
-
-    headerConfig: PropTypes.shape({
-        headerName: PropTypes.string,
-        imageUrl: PropTypes.string,
-        onHeaderNameClick: PropTypes.func,
-    }).isRequired,
+    headerConfig: headerConfigType.isRequired,
 
     showEmoji: PropTypes.bool.isRequired,
     showUsername: PropTypes.bool.isRequired,
