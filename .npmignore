@@ -1,5 +1,13 @@
-src
+.vscode
 demo
+docs
+src
 .babelrc
+.eslintrc
+.gitattributes
 .gitignore
-webpack.config.js
+.prettierrc
+react-chat-view.code-workspace
+webpack.common.js
+webpack.dev.js
+webpack.prod.js
