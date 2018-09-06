@@ -32,7 +32,7 @@ Header.propTypes = {
 Header.defaultProps = {
     imageUrl: '',
     headerName: '',
-    onHeaderNameClick: () => undefined,
+    onHeaderNameClick: undefined,
 };
 
 export default Header;

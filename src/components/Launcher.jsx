@@ -104,7 +104,7 @@ Launcher.defaultProps = {
     headerConfig: {
         imageUrl: '',
         headerName: '',
-        onHeaderNameClick: () => undefined,
+        onHeaderNameClick: undefined,
     },
 
     messageList: [],
