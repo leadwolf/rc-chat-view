@@ -10,7 +10,7 @@ const Header = ({ imageUrl, headerName, onClose, onHeaderNameClick }) => (
             {imageUrl && <img className="sc-header--img" src={imageUrl} alt="" />}
         </div>
         <div
-            className={`sc-header--team-name ${headerName ? 'enabled' : ''}`}
+            className={`sc-header--team-name ${headerName && onHeaderNameClick ? 'enabled' : ''}`}
             onClick={onHeaderNameClick}
         >
             {' '}
