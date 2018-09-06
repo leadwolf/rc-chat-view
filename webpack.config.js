@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -40,7 +41,12 @@ module.exports = {
             },
         ],
     },
-    plugins: [htmlWebpackPlugin, bundleAnalyzerPlugin],
+    plugins: [
+        htmlWebpackPlugin,
+        bundleAnalyzerPlugin,
+        // Ignore all locale files of moment.js
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    ],
     resolve: {
         extensions: ['.js', '.jsx'],
     },
