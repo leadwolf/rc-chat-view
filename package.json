@@ -9,7 +9,7 @@
         "transpile": "babel src -d dist --copy-files",
         "prepublishOnly": "npm run transpile",
         "build": "webpack --mode production",
-        "deploy": "npx gh-pages -d demo/dist",
+        "deploy": "npx gh-pages -d demo/dist -b gh-pages",
         "publish-demo": "npm run build && npm run deploy"
     },
     "repository": {
