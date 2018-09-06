@@ -27,10 +27,12 @@ class TestArea extends Component {
                     <div className="demo-test-area--title-main">react-chat-view demo</div>
                     <div className="demo-test-area--title-sub">made by Christopher Caroni</div>
                     <div>
-                        Forked from{' '}
-                        <a href="https://github.com/kingofthestack/react-chat-window">
-                            https://github.com/kingofthestack/react-chat-window
-                        </a>
+                        <p className="demo-test-area--info top">
+                            Please go see the original source at{' '}
+                            <a href="https://github.com/kingofthestack/react-chat-window">
+                                kingofthestack/react-chat-window
+                            </a>
+                        </p>
                     </div>
                 </div>
                 <form
@@ -61,8 +63,7 @@ class TestArea extends Component {
                             onClick={() => setUser('chris')}
                             type="button"
                         >
-                            {' '}
-                            Send as Chris{' '}
+                            Send as Chris
                         </button>
                         <button
                             className={`demo-test-area--user-button ${
@@ -71,19 +72,21 @@ class TestArea extends Component {
                             onClick={() => setUser('james')}
                             type="button"
                         >
-                            {' '}
-                            Send as James{' '}
+                            Send as James
                         </button>
                     </div>
-                    <button className="demo-test-area--button"> Send Message! </button>
+                    <button className="demo-test-area--button" type="button">
+                        {' '}
+                        Send Message!{' '}
+                    </button>
                 </form>
-                <p className="demo-test-area--info">
+                <p className="demo-test-area--info main">
                     react-chat-view is a chat window that allows you to build and add custom live
                     chat to your sites. It includes only the react chat widget. There is no backend,
                     and no communication system baked in.
                     <br />
                     <br />
-                    For instructions on how to use react-chat-window click{' '}
+                    For instructions on how to use react-chat-view click{' '}
                     <a href="https://github.com/Christopher-Caroni/react-chat-view">here</a>.
                 </p>
             </div>

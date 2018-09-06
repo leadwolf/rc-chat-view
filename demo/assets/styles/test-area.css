@@ -16,7 +16,7 @@
 }
 
 .demo-test-area--title-sub {
-    color: #4e8cff;
+    color: #8694ab;
     padding-top: 10px;
 }
 
@@ -86,10 +86,17 @@
 
 .demo-test-area--info {
     margin: auto;
-    margin-top: 40px;
     color: #516996;
     font-weight: 200;
     width: 550px;
+}
+
+.demo-test-area--info.top {
+    margin-top: 20px;
+}
+
+.demo-test-area--info.main {
+    margin-top: 40px;
 }
 
 .demo-test-area--info a {
