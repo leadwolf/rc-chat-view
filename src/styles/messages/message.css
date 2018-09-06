@@ -42,10 +42,12 @@
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
+    outline: none;
 }
 
 .sc-message--emoji {
     cursor: pointer;
+    outline: none;
 }
 
 .sc-message--text h1,
