@@ -43,11 +43,12 @@
     border-radius: 6px;
     cursor: pointer;
     outline: none;
+    max-width: calc(100% - 120px);
+    transition: transform 100ms ease-in-out;
 }
 
-.sc-message--emoji {
-    cursor: pointer;
-    outline: none;
+.sc-message--text:hover {
+    transform: scale(1.05);
 }
 
 .sc-message--text h1,
@@ -87,12 +88,18 @@ p {
     color: white;
 }
 
-.sc-message--text {
-    max-width: calc(100% - 120px);
-}
-
 .sc-message--text p {
     word-wrap: break-word;
+}
+
+.sc-message--emoji {
+    cursor: pointer;
+    outline: none;
+    transition: transform 100ms ease-in-out;
+}
+
+.sc-message--emoji:hover {
+    transform: scale(1.1);
 }
 
 .sc-message--date {
