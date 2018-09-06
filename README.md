@@ -59,12 +59,12 @@ As such, this project uses Webpack instead of NWB. I also want to modify and ext
 ### Scripts
 
 -   `npm run start`: start development server with hot loading
--   `npm run transpile`: transpile source for publishing
+-   `npm run transpile`: `manual usage` transpile source for publishing
 
 ** NOT YET READY **
 
--   `npm run build`: build the demo for Github Pages
--   `npm run deploy`: deploy the demo with gh-pages
+-   `npm run build`: `manual usage` build the demo for Github Pages
+-   `npm run deploy`: `manual usage` deploy the demo with gh-pages
 -   `npm run publish-demo`: run `build` and `deploy`
 
 ### Style
