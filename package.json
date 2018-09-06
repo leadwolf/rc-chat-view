@@ -68,7 +68,6 @@
     "dependencies": {
         "babel-plugin-lodash": "^3.3.4",
         "emoji-mart": "^2.8.1",
-        "lodash": "^4.17.10",
         "markdown-it": "^8.4.2",
         "markdown-it-emoji": "^1.4.0",
         "moment": "^2.22.2",

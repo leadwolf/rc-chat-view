@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
 const momentPropTypes = require('react-moment-proptypes');
 
@@ -26,7 +25,7 @@ export const messageContentTextValidator = (props, propName, componentName) => {
     if (props.type === MESSAGE_CONTENT_TYPE_EMOJI) {
         return null;
     }
-    if (props.type === MESSAGE_CONTENT_TYPE_TEXT && !_.isString(props[propName])) {
+    if (props.type === MESSAGE_CONTENT_TYPE_TEXT && typeof props[propName] !== 'string') {
         return new Error(
             `Invalid prop '${propName}' supplied to ${componentName}. Validation failed`
         );
