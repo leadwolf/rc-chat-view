@@ -30,50 +30,56 @@ class TestArea extends Component {
         return (
             <div className="demo-test-area--wrapper">
                 <MainInformation />
-                <form
-                    className="demo-test-area"
-                    onSubmit={e => {
-                        e.preventDefault();
-                        this.sendMessage();
-                    }}
-                >
-                    <Typography
-                        variant="body1"
-                        color="textSecondary"
-                        className="demo-test-area--preamble"
-                    >
-                        Test the chat window by sending a message:
-                    </Typography>
-                    <textarea
-                        ref={e => {
-                            this.textArea = e;
+                <div className="demo-test-area">
+                    <form
+                        onSubmit={e => {
+                            e.preventDefault();
+                            this.sendMessage();
                         }}
-                        onKeyDown={this.handleKey}
-                        onFocus={() => setIsTyping(true)}
-                        onBlur={() => setIsTyping(false)}
-                        className="demo-test-area--text"
-                        placeholder="Write a test message...."
-                    />
-                    <div className="demo-test-area--user-selection">
-                        <UserButton
-                            variant={user === 'chris' ? 'contained' : 'outlined'}
-                            onClick={() => setUser('chris')}
+                    >
+                        <Typography
+                            variant="body1"
+                            color="textSecondary"
+                            className="demo-test-area--preamble"
+                        >
+                            Test the chat window by sending a message:
+                        </Typography>
+                        <textarea
+                            ref={e => {
+                                this.textArea = e;
+                            }}
+                            onKeyDown={this.handleKey}
+                            onFocus={() => setIsTyping(true)}
+                            onBlur={() => setIsTyping(false)}
+                            className="demo-test-area--text"
+                            placeholder="Write a test message...."
+                        />
+                        <div className="demo-test-area--user-selection">
+                            <UserButton
+                                variant={user === 'chris' ? 'contained' : 'outlined'}
+                                onClick={() => setUser('chris')}
+                                color="primary"
+                                fullWidth
+                                text="Send as Chris"
+                            />
+                            <UserButton
+                                variant={user === 'james' ? 'contained' : 'outlined'}
+                                onClick={() => setUser('james')}
+                                color="primary"
+                                fullWidth
+                                text="Send as James"
+                            />
+                        </div>
+                        <Button
+                            className="demo-test-area--button"
+                            variant="contained"
                             color="primary"
                             fullWidth
-                            text="Send as Chris"
-                        />
-                        <UserButton
-                            variant={user === 'james' ? 'contained' : 'outlined'}
-                            onClick={() => setUser('james')}
-                            color="primary"
-                            fullWidth
-                            text="Send as James"
-                        />
-                    </div>
-                    <Button className="demo-test-area--button" variant="contained" color="primary">
-                        Send Message!{' '}
-                    </Button>
-                </form>
+                        >
+                            Send Message!{' '}
+                        </Button>
+                    </form>
+                </div>
                 <SecondaryInformation />
             </div>
         );
