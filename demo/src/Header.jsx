@@ -30,7 +30,12 @@ function Header(props) {
                     <Typography variant="title" color="inherit" className={classes.grow}>
                         rc-chat-ui
                     </Typography>
-                    <Button color="inherit">Usage</Button>
+                    <Button
+                        color="inherit"
+                        href="https://github.com/Christopher-Caroni/rc-chat-view#readme"
+                    >
+                        Usage
+                    </Button>
                 </Toolbar>
             </AppBar>
         </div>
