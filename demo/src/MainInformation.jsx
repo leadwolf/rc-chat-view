@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 const MainInformation = () => (
     <div className="demo-test-area--title">
         <Typography variant="display3" color="inherit">
-            rc-chat-ui demo
+            rc-chat-view demo
         </Typography>
 
         <Typography variant="title" color="textSecondary">

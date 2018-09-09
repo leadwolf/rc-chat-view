@@ -28,7 +28,7 @@ function Header(props) {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="title" color="inherit" className={classes.grow}>
-                        rc-chat-ui
+                        rc-chat-view
                     </Typography>
                     <Button
                         color="inherit"
