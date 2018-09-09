@@ -70,7 +70,6 @@
         "webpack-merge": "^4.1.4"
     },
     "dependencies": {
-        "babel-plugin-lodash": "^3.3.4",
         "emoji-mart": "^2.8.1",
         "markdown-it": "^8.4.2",
         "markdown-it-emoji": "^1.4.0",
