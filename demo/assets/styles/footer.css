@@ -1,11 +1,28 @@
 .demo-footer {
-  width: 1100px;
-  display: flex;
-  margin: auto;
-  justify-content: space-between;
-  padding: 20px 0px;
-  border-top: solid 2px #F0F4FA;
-  color: #8694AB;
-  font-weight: 100;
-  font-size: 14px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-footer--information {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: solid 2px #f0f4fa;
+    color: #8694ab;
+}
+
+.demo-monster-img {
+    width: 15%;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .demo-monster-img {
+        width: 60%;
+    }
 }
