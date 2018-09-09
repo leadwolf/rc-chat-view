@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import moment from 'moment';
 
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+
 import { Launcher } from '../../src';
 import messageHistory from '../data/messageHistory';
 import TestArea from './TestArea';
@@ -11,6 +14,17 @@ import Footer from './Footer';
 import monsterImgUrl from '../assets/monster.png';
 import '../assets/styles/base.css';
 import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI } from '../../src/types';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#2196f3',
+        },
+        secondary: {
+            main: '#ff1744',
+        },
+    },
+});
 
 class Demo extends Component {
     state = {
@@ -85,30 +99,33 @@ class Demo extends Component {
         const { messageList, newMessagesCount, isOpen, user, isTyping } = this.state;
 
         return (
-            <div>
-                <Header />
-                <TestArea
-                    onMessage={this.fakeReceiveMessage}
-                    user={user}
-                    setUser={this.setUser}
-                    setIsTyping={this.setIsTyping}
-                />
-                <Launcher
-                    headerConfig={{
-                        headerName: 'rc-chat-view',
-                        imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
-                    }}
-                    onMessageWasSent={this._sendMessage}
-                    messageList={messageList}
-                    newMessagesCount={newMessagesCount}
-                    handleClick={this._handleClick}
-                    isOpen={isOpen}
-                    userId="dummy_sender_1"
-                    isTyping={isTyping}
-                />
-                <img className="demo-monster-img" src={monsterImgUrl} alt="monster" />
-                <Footer />
-            </div>
+            <MuiThemeProvider theme={theme}>
+                <Grid container direction="row" justify="center" alignItems="center">
+                    <Header />
+                    <TestArea
+                        onMessage={this.fakeReceiveMessage}
+                        user={user}
+                        setUser={this.setUser}
+                        setIsTyping={this.setIsTyping}
+                    />
+                    <Launcher
+                        headerConfig={{
+                            headerName: 'rc-chat-view',
+                            imageUrl:
+                                'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
+                        }}
+                        onMessageWasSent={this._sendMessage}
+                        messageList={messageList}
+                        newMessagesCount={newMessagesCount}
+                        handleClick={this._handleClick}
+                        isOpen={isOpen}
+                        userId="dummy_sender_1"
+                        isTyping={isTyping}
+                    />
+                    <img className="demo-monster-img" src={monsterImgUrl} alt="monster" />
+                    <Footer />
+                </Grid>
+            </MuiThemeProvider>
         );
     }
 }
