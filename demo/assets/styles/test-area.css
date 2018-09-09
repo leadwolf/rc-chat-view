@@ -18,7 +18,8 @@
 }
 
 .demo-test-area--preamble {
-    padding: 20px 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .demo-test-area--button {
@@ -39,7 +40,7 @@
 
 .demo-test-area--info.main {
     width: 40%;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .demo-test-area--info a {
