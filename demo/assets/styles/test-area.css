@@ -7,6 +7,7 @@
 .demo-test-area--title {
     align-self: center;
     text-align: center;
+    width: 30%;
 }
 
 .demo-test-area {
@@ -63,5 +64,8 @@
 
     .demo-test-area {
         width: 90%;
+    }
+    .demo-test-area--title {
+        width: 80%;
     }
 }
