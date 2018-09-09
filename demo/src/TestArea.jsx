@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import MainInformation from './MainInformation';
 import SecondaryInformation from './SecondaryInformation';
+import UserButton from './UserButton';
 
 class TestArea extends Component {
     handleKey = event => {
@@ -54,22 +55,20 @@ class TestArea extends Component {
                         placeholder="Write a test message...."
                     />
                     <div className="demo-test-area--user-selection">
-                        <Button
+                        <UserButton
                             variant={user === 'chris' ? 'contained' : 'outlined'}
                             onClick={() => setUser('chris')}
                             color="primary"
                             fullWidth
-                        >
-                            Send as Chris
-                        </Button>
-                        <Button
+                            text="Send as Chris"
+                        />
+                        <UserButton
                             variant={user === 'james' ? 'contained' : 'outlined'}
                             onClick={() => setUser('james')}
                             color="primary"
                             fullWidth
-                        >
-                            Send as James
-                        </Button>
+                            text="Send as James"
+                        />
                     </div>
                     <Button className="demo-test-area--button" variant="contained" color="primary">
                         Send Message!{' '}
