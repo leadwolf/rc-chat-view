@@ -53,11 +53,12 @@ class TestArea extends Component {
                         className="demo-test-area--text"
                         placeholder="Write a test message...."
                     />
-                    <div>
+                    <div className="demo-test-area--user-selection">
                         <Button
                             variant={user === 'chris' ? 'contained' : 'outlined'}
                             onClick={() => setUser('chris')}
                             color="primary"
+                            fullWidth
                         >
                             Send as Chris
                         </Button>
@@ -65,6 +66,7 @@ class TestArea extends Component {
                             variant={user === 'james' ? 'contained' : 'outlined'}
                             onClick={() => setUser('james')}
                             color="primary"
+                            fullWidth
                         >
                             Send as James
                         </Button>

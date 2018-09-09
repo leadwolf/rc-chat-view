@@ -17,6 +17,11 @@
     flex-direction: column;
 }
 
+.demo-test-area--user-selection {
+    display: flex;
+    flex-direction: row;
+}
+
 .demo-test-area--preamble {
     padding-top: 20px;
     padding-bottom: 10px;
