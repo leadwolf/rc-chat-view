@@ -17,7 +17,7 @@ import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI } from '../../src
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#2196f3',
+            main: '#4e8cff',
         },
         secondary: {
             main: '#ff1744',
