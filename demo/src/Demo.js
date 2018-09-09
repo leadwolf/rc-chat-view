@@ -11,7 +11,6 @@ import TestArea from './TestArea';
 import Header from './Header';
 import Footer from './Footer';
 
-import monsterImgUrl from '../assets/monster.png';
 import '../assets/styles/base.css';
 import { MESSAGE_CONTENT_TYPE_TEXT, MESSAGE_CONTENT_TYPE_EMOJI } from '../../src/types';
 
@@ -122,7 +121,6 @@ class Demo extends Component {
                         userId="dummy_sender_1"
                         isTyping={isTyping}
                     />
-                    <img className="demo-monster-img" src={monsterImgUrl} alt="monster" />
                     <Footer />
                 </Grid>
             </MuiThemeProvider>
