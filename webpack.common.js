@@ -2,11 +2,21 @@ const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
     template: path.join(__dirname, 'demo/src/index.html'),
     filename: './index.html',
 });
+const copyWebpackPlugin = new CopyWebpackPlugin(
+    [
+        {
+            from: path.join(__dirname, 'demo/forDeployment'),
+            to: path.join(__dirname, 'demo/dist'),
+        },
+    ],
+    { debug: 'info' }
+);
 
 module.exports = {
     entry: path.join(__dirname, 'demo/src/index.js'),
@@ -41,6 +51,7 @@ module.exports = {
     },
     plugins: [
         htmlWebpackPlugin,
+        copyWebpackPlugin,
         // Ignore all locale files of moment.js
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ],
