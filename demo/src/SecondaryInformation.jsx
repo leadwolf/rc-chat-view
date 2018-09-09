@@ -3,7 +3,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const SecondaryInformation = () => (
-    <p className="demo-test-area--info main">
+    <div className="demo-test-area--info main">
         <Typography variant="body1" color="textPrimary" paragraph>
             rc-chat-view is a chat window that allows you to build and add custom live chat to your
             sites. <br />
@@ -14,7 +14,7 @@ const SecondaryInformation = () => (
             For instructions on how to use rc-chat-view click{' '}
             <a href="https://github.com/Christopher-Caroni/rc-chat-view#readme">here</a>.
         </Typography>
-    </p>
+    </div>
 );
 
 export default SecondaryInformation;
