@@ -1,10 +1,11 @@
 .demo-footer {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .demo-footer--information {
-    width: 1100px;
+    width: 80%;
     display: flex;
     margin: auto;
     justify-content: space-between;
@@ -14,7 +15,7 @@
 }
 
 .demo-monster-img {
-    width: 300px;
+    width: 15%;
     align-self: center;
     margin-bottom: 10px;
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../assets/styles/footer.css';
 import Typography from '@material-ui/core/Typography';
 import monsterImgUrl from '../assets/monster.png';
